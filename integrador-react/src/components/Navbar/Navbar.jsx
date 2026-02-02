@@ -1,17 +1,23 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { IoCart } from "react-icons/io5";
 import { IoPerson } from "react-icons/io5";
-import { CartNavStyled } from "./NavbarStyles";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.jpg";
 
-import {NavbarContainer, LogoStyled} from "./NavbarStyles";
+import {NavbarContainer, LogoStyled, CartNavStyled} from "./NavbarStyles";
+import { CartModal } from "./CartModal/CartModal";
+import { IconCart } from "./IconCart/IconCart";
 
 
 
 
 export const Navbar = () => {
+    const [hiddenCart, setHiddenCart] = useState(true);
+
+
   return (
     <NavbarContainer>
+        <CartModal hiddenCart={hiddenCart} setHiddenCart={setHiddenCart} />
+
             <Link to="/">
                 <LogoStyled src={logo} alt="Logo"/>
             </Link>
@@ -23,8 +29,12 @@ export const Navbar = () => {
             <ul>
                 <CartNavStyled to="/nosotros">Nosotros</CartNavStyled>
                 <CartNavStyled to="/productos">Productos</CartNavStyled>
-                <CartNavStyled to="/cart"> <IoCart size={24} /> </CartNavStyled>
+
+
+                <div onClick={() => setHiddenCart(!hiddenCart)}> <IconCart /> </div>
+                
                 <CartNavStyled to="/login"><IoPerson size={24}/></CartNavStyled>
+
             </ul>
         </nav>
     </NavbarContainer>

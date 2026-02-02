@@ -49,3 +49,26 @@ export const LogoStyled= styled.img`
 
 export const TitleStyled= styled.h1`
 `
+
+// __________________________________________
+
+// export const LinksContainerStyled = styled.div`
+//   color: white;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 40px;
+
+//   a {
+//     padding: 1rem 1.5rem;
+//   }
+
+//   a:first-child {
+//     background: var(--orange-bg);
+//     border-radius: 1rem;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 5px;
+//   }
+// `;

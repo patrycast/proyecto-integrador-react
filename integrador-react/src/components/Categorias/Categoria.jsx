@@ -1,11 +1,12 @@
-
+import { CardCategoria } from "./CategoriasStyles"
 
 
 export const Categoria = ({ category}) => {
   return (
-    <div>
+    <CardCategoria>
+      {/* <img src={img} alt={title} /> */}
         <h3>{category}</h3>
-    </div>
+    </CardCategoria>
     
   )
 }

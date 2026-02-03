@@ -1,8 +1,8 @@
-
+import { CardSuggestStyled } from "./CardsSuggestStyles"
 
 export const CardSuggest = ({title,  desc, price}) => {
   return (
-    <div>
+    <CardSuggestStyled>
         {/* <img src={img} alt={title} /> */}
 
         <div>
@@ -12,7 +12,7 @@ export const CardSuggest = ({title,  desc, price}) => {
         </div>
 
         <button onClick={(e) => {e.preventDefault()}}>Agregar</button>
-    </div>
+    </CardSuggestStyled>
 
   )
 }

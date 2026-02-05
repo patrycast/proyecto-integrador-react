@@ -1,9 +1,11 @@
 import { CardProducto } from "./CardProducto"
-import { products } from "../../mock/products"
 import { ProductsContainer } from "./CardsProductosStyles"
+import { useSelector } from "react-redux"
 
 
 export const CardsProductos = () => {
+    const products= useSelector(state => state.products.products)
+
   return (
     <div>
         <ProductsContainer>

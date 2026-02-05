@@ -1,11 +1,15 @@
 import { CardSuggest } from "./CardSuggest"
-import { suggestWines } from "../../mock/suggestWines"
 import { CardsSuggestContainer } from "./CardsSuggestStyles"
+import { useSelector } from "react-redux"
+
 
 export const CardsSuggest = () => {
+
+  const {suggested} = useSelector((state) => state.suggested)
+
   return (
     <CardsSuggestContainer>
-        {suggestWines.map(wine => (
+        {suggested.map(wine => (
             <CardSuggest key={wine.id} {...wine} />
         ))}      
     </CardsSuggestContainer>

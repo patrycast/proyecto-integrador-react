@@ -3,7 +3,8 @@ import {categories} from "../../mock/categories"
 
 
 const INITIAL_STATE = {
-    categories: categories
+    categories: categories,
+    pickedCategory: null,
 }
 
 
@@ -14,10 +15,16 @@ export const categoriesSlice = createSlice({
         getCategories: (state) => {
             return state;
         },
+        pickCategory: (state, action) => {
+            return {
+                ...state,
+                pickedCategory: action.payload !== state.pickedCategory ? action.payload : null
+            };
+        },
     },
 });
 
 
-export const { getCategories} = categoriesSlice.actions;
+export const { getCategories, pickCategory} = categoriesSlice.actions;
 
 export default categoriesSlice.reducer;

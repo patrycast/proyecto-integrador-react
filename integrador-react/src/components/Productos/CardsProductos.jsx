@@ -1,24 +1,60 @@
 import { CardProducto } from "./CardProducto"
 import { ProductsContainer } from "./CardsProductosStyles"
 import { useSelector } from "react-redux"
+import { useState } from "react"
+
+const MAX_PRODUCTS= 8;
 
 
 export const CardsProductos = () => {
+    const [maxProducts, setMaxProducts] = useState(MAX_PRODUCTS)
+    
     const products= useSelector(state => state.products.products)
+
+    const {pickedCategory} = useSelector(state => state.categories)
+   
+    const filtereProducts= pickedCategory ? products.filter(
+        product => product.category === pickedCategory
+    ) : products
+
+
+    const renderedProducts= filtereProducts.slice(0, maxProducts)
 
   return (
     <div>
         <ProductsContainer>
-            {products.map((product) => (
+            {renderedProducts.map((product) => (
                 <CardProducto key={product.id} {...product} />
 
             ))}
         </ProductsContainer>
 
+        {!pickedCategory && (
+
         <div>
-            <button onClick={(e) => e.preventDefault()}>Ver Menos</button>
-            <button onClick={(e) => e.preventDefault()}>Ver Más</button>
+            <button onClick={() => 
+              setMaxProducts(prev => prev - MAX_PRODUCTS)}
+              disabled= {maxProducts === MAX_PRODUCTS}>
+                Ver Menos
+            </button>
+
+            <button onClick={() => 
+              setMaxProducts(prev => prev + MAX_PRODUCTS) } 
+              disabled={maxProducts >= filtereProducts.length}>
+                Ver Más
+            </button>
         </div>
+        )} 
+
+
+{/* 
+{!pickedCategory && (
+  <div>
+    <button onClick={(e) => e.preventDefault()}>Ver Menos</button>
+
+    {maxProducts < filtereProducts.length ? ( <button onClick={() => setMaxProducts(prev => prev + MAX_PRODUCTS)}> Ver Más </button> ) : ( <span>No hay más productos</span> )}
+  </div>
+)}*/}
     </div>
   )
-}
+} 

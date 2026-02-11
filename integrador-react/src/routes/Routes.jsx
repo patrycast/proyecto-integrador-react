@@ -6,6 +6,7 @@ import { MisPedidos } from "../pages/MisPedidos/MisPedidos.jsx";
 import { Felicitaciones } from "../pages/Felicitaciones/Felicitaciones.jsx";
 import { PageNotFound } from "../pages/PageNotFound/PageNotFound.jsx";
 import { Nosotros } from "../pages/Nosotros/Nosotros.jsx";
+import { Contacto } from "../pages/Contacto/Contacto.jsx";
 
 
 
@@ -18,6 +19,7 @@ export const Routes = () => {
         <Route path="/productos" element={<Home />} /> 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />}/>
+        <Route path="/contacto" element={<Contacto />}/>
         <Route path="/MisPedidos" element={<MisPedidos />}/>
         <Route path="/felicitaciones" element={<Felicitaciones />}/>
 

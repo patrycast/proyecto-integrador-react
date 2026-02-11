@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoPerson } from "react-icons/io5";
-import { FaSearch } from "react-icons/fa";
 import logo from "../../assets/logo.jpg";
 import {NavbarContainer, LogoStyled, CartNavStyled} from "./NavbarStyles";
 import { CartModal } from "./CartModal/CartModal";
@@ -10,9 +9,9 @@ import { IconCart } from "./IconCart/IconCart";
 
 
 
+
 export const Navbar = () => {
     const [hiddenCart, setHiddenCart] = useState(true);
-    // const [hiddenSearch, setHiddenSearch] = useState(true);
 
 
   return (
@@ -28,7 +27,7 @@ export const Navbar = () => {
         </div>
         <nav>
             <ul>
-                {/* <div onClick={() => { setHiddenSearch(!hiddenSearch)}}><FaSearch /></div> */}
+                
                 <CartNavStyled to="/nosotros">Nosotros</CartNavStyled>
                 <CartNavStyled to="/productos">Productos</CartNavStyled>
 
@@ -36,6 +35,7 @@ export const Navbar = () => {
                 <div onClick={() => setHiddenCart(!hiddenCart)}> <IconCart /> </div>
                 
                 <CartNavStyled to="/login"><IoPerson size={24}/></CartNavStyled>
+                <CartNavStyled to="/contacto">Contacto</CartNavStyled>
 
             </ul>
         </nav>

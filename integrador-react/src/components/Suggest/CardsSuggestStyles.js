@@ -4,8 +4,8 @@ export const CardsSuggestContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     padding: 1rem;
-    gap: 1rem;
-    background: brown;
+    gap: 3rem;
+    background: brown; 
 
 
   @media (max-width: 1024px) {
@@ -23,7 +23,7 @@ export const CardSuggestTitle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; 
 `;
 
 export const CardSuggestStyled= styled.div`
@@ -33,11 +33,11 @@ export const CardSuggestStyled= styled.div`
   padding: 1rem; 
   border-radius: 8px; 
   text-align: center; 
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
 
   &:hover { 
     min-width: 240px;
-    transform: scale(1.05);
+    transform: scale(1.03);
     transform-origin: center;
 // img { 
 //   max-width: 100%; 

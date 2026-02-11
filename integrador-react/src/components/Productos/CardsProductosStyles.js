@@ -7,14 +7,14 @@ export const ProductsContainer = styled.section`
     grid-template-columns: repeat(auto-fit, 400px);
     row-gap: 3.5rem;
     /* width: 100%; */
-    padding: 1rem 0;
+    padding: 1rem 0; 
 `;
 
 export const ProductCard = styled.div`
     width: 300px;
     border-radius: 15px;
     padding: 1rem;
-    border: 2px solid #d64141;
+    border: 2px solid #d64141; 
 
     img {
         width: 100%;

@@ -5,7 +5,7 @@ export const CardsSuggestContainer = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     padding: 1rem;
     gap: 3rem;
-    background: brown; 
+    background: brown; padding: 1rem 4rem;
 
 
   @media (max-width: 1024px) {

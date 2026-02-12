@@ -24,7 +24,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden; 
     background: #722F37;
     background: linear-gradient(180deg, var(--borgoña-oscuro) 0%, #131415 100%);
-    box-sizing: border-box;
+    box-sizing: border-box; 
 
     }
 

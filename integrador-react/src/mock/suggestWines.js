@@ -1,8 +1,10 @@
+import sugerenciaTinto from "../../assets/sugerencia_tinto.png";
+
 export const suggestWines = [
   {
     id: 101,
     title: "Malbec Rebelde",
-    // img: "https://res.cloudinary.com/demo/image/upload/v1660000000/vinos/malbec-rebelde.png",
+    img: sugerenciaTinto,
     desc: "Intenso, con carácter y notas de mora. Ideal para noches de código.",
     price: 4200,
     category: "Tintos",

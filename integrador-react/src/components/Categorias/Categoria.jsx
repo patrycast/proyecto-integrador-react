@@ -3,7 +3,7 @@ import { CardCategoria } from "./CategoriasStyles"
 import { pickCategory } from  "../../redux/slices/categoriesSlice"
 
 
-export const Categoria = ({ category}) => {
+export const Categoria = ({ category, img, title}) => {
 
   const {pickedCategory}= useSelector((state) => state.categories)
   
@@ -17,7 +17,7 @@ export const Categoria = ({ category}) => {
       picked={category === pickedCategory}
       onClick={() => dispatch(pickCategory(category))}
       >
-      {/* <img src={img} alt={title} /> */}
+      <img src={img} alt={title} />
         <h3>{category}</h3>
     </CardCategoria>
     

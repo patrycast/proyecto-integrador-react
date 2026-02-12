@@ -1,0 +1,1 @@
+export const SHIPPPING= 1000;

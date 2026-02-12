@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const CategoriasContainer = styled.div`
 background: blue;
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));`
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+padding: 0 4rem;
+;`
 
 
 export const CardCategoria = styled.div`
@@ -13,10 +15,8 @@ export const CardCategoria = styled.div`
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  /* width: 180px; */
   width: 140px;
   height: 140px;
-  /* padding: 2rem 0.5rem; */
   border: 2px solid red;
   border-radius: 50%;
   background-color: ${({picked}) => (picked ? "#FFD700" : "#746f6f")}; cursor: pointer;

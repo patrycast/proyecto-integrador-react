@@ -1,47 +1,75 @@
-import { ModalContainer, Overlay, TitleCart, Summary,SummaryRow, TotalRow, OrderButton, ProductItem
-  , ProductName, ProductDesc, ProductPrice, QuantityControls, CartWrapper
+
+import { useDispatch, useSelector } from "react-redux";
+import { toggleCart, clearCart } from "../../../redux/slices/cartSlice";
+import { CartModalCard } from "./CartModalCard";
+import { 
+  ModalContainer, 
+  Overlay,
+  TitleCart, 
+  ButtonCart,
+  Summary,
+  SummaryRow, 
+  TotalRow, 
+  OrderButton, 
+  CartWrapper,
+  ButtonsCart,
  } from "./CartModalStyles";
+ import { IoTrash } from "react-icons/io5";
 
-export const CartModal = ({hiddenCart, setHiddenCart}) => {
-    if(hiddenCart) return null;
 
+
+export const CartModal = () => {
+
+  const { cart, shipping, hidden : cartHidden} = useSelector(state => state.cart);
+  const dispatch = useDispatch();
+
+  const handleToggleCart = () => {
+    dispatch(toggleCart())
+  }
+
+  const handleClearCart = () => {
+    dispatch(clearCart())
+  }
+
+    if(cartHidden) return null;
+
+ const cartTotal= cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+
+ const cartTotalWithShipping = cartTotal + shipping;
   return (
     <CartWrapper>
-    <Overlay onClick={() => setHiddenCart(true)}>
+    <Overlay onClick={handleToggleCart}>
         <ModalContainer onClick={(e) => e.stopPropagation()}>
             <TitleCart>Tu Carrito</TitleCart>
-            <button onClick={() => setHiddenCart(true)}>X</button>
+            <ButtonsCart>
+              <ButtonCart onClick={handleToggleCart}>X</ButtonCart>
+              <ButtonCart onClick={handleClearCart}><IoTrash /></ButtonCart>
+            </ButtonsCart>
 
-          <ProductItem>
-          <div>
-            <ProductName>La Aco</ProductName>
-            <ProductDesc>Cheta la gorra</ProductDesc>
-            <ProductPrice>$ 3.000,00</ProductPrice>
-          </div>
-          <QuantityControls>
-            <button>-</button>
-            <span>3</span>
-            <button>+</button>
-          </QuantityControls>
-        </ProductItem>
+         
+          {cart.length ? (
+            cart.map((item) => (
+              <CartModalCard key={item.id} {...item}/>
+            ))
+          ) : <p style={{ textAlign: "center" }}>Tu carrito está vacío</p>}
 
 
         <Summary>
           <SummaryRow>
             <span>Subtotal:</span>
-            <span>$ 9.000,00</span>
+            <span>$ {cartTotal}</span>
           </SummaryRow>
           <SummaryRow>
             <span>Envío:</span>
-            <span>$ 500,00</span>
+            <span>$ {shipping}</span>
           </SummaryRow>
           <TotalRow>
             <span>Total:</span>
-            <span>$ 9.500,00</span>
+            <span>$ {cartTotalWithShipping}</span>
           </TotalRow>
+        <OrderButton>INICIAR PEDIDO</OrderButton>
         </Summary>
 
-        <OrderButton>INICIAR PEDIDO</OrderButton>
         </ModalContainer>
 
 

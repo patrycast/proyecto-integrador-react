@@ -1,7 +1,8 @@
-
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCart, clearCart } from "../../../redux/slices/cartSlice";
 import { CartModalCard } from "./CartModalCard";
+
 import { 
   ModalContainer, 
   Overlay,
@@ -19,9 +20,12 @@ import {
 
 
 export const CartModal = () => {
+  const navigate = useNavigate();
 
   const { cart, shipping, hidden : cartHidden} = useSelector(state => state.cart);
   const dispatch = useDispatch();
+
+
 
   const handleToggleCart = () => {
     dispatch(toggleCart())
@@ -67,7 +71,8 @@ export const CartModal = () => {
             <span>Total:</span>
             <span>$ {cartTotalWithShipping}</span>
           </TotalRow>
-        <OrderButton>INICIAR PEDIDO</OrderButton>
+        <OrderButton onClick={() => 
+          navigate("/orderSummary")}>Confirmar Pedido</OrderButton>
         </Summary>
 
         </ModalContainer>

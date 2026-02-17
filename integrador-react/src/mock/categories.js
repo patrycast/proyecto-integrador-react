@@ -2,31 +2,31 @@ export const categories = [
   {
     id: 1,
     title: "Tintos",
-    // img: "https://res.cloudinary.com/demo/image/upload/v1660000000/vinos/tintos.png",
+    img: "assets/sugerencia_tinto.png",
     category: "Tintos",
   },
   {
     id: 2,
     title: "Blancos",
-    // img: "https://res.cloudinary.com/demo/image/upload/v1660000001/vinos/blancos.png",
+    img: "assets/sugerencia_blanco.png",
     category: "Blancos",
   },
   {
     id: 3,
     title: "Rosados",
-    // img: "https://res.cloudinary.com/demo/image/upload/v1660000002/vinos/rosados.png",
+    img: "assets/sugerencia_rosado.png",
     category: "Rosados",
   },
   {
     id: 4,
     title: "Espumantes",
-    // img: "https://res.cloudinary.com/demo/image/upload/v1660000003/vinos/espumantes.png",
+    img: "assets/sugerencia_espumante.png",
     category: "Espumantes",
   },
   {
     id: 5,
     title: "Premium",
-    // img: "https://res.cloudinary.com/demo/image/upload/v1660000004/vinos/premium.png",
+    img: "assets/sugerencia-premium.png",
     category: "Premium",
   },
 ];

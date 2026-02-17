@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { products } from "../../mock/products"
+// import { suggestWines } from "../../mock/suggestWines"
 
 const generateSuggested = (number) => {
     const suggested = []
@@ -8,6 +9,8 @@ const generateSuggested = (number) => {
     while (suggested.length < number) {
         const randomId = Math.floor(Math.random() * products.length)
         const product= { ...products[randomId]}
+        //  const randomId = Math.floor(Math.random() * suggestWines.length)
+        // const product= { ...suggestWines[randomId]}
 
         if(!usedIds.has(product.id)){
             suggested.push(product)

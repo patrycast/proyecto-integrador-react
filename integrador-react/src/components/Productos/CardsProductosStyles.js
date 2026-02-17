@@ -15,10 +15,12 @@ export const ProductCard = styled.div`
     border-radius: 15px;
     padding: 1rem;
     border: 2px solid #d64141; 
+    box-shadow: 0 4px 8px rgba(218, 166, 166, 0.48);
 
     img {
-        width: 100%;
+        width: 100%; 
         margin-bottom: 1rem;
+        border-radius: 20px;
     }
 
     h3 {
@@ -26,7 +28,7 @@ export const ProductCard = styled.div`
         margin: 0;
     }
     p {
-        color: #666;
+        color: #737171;
         font-size: 1.2rem;
     }
 `;

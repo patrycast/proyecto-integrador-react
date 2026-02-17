@@ -3,7 +3,7 @@ import { addItemToCart, toggleCart } from "../../redux/slices/cartSlice"
 import { ProductCard } from "./CardsProductosStyles"
 import { toast } from "sonner"
 
-export const CardProducto = ({img, title, desc, price, id}) => {
+export const CardProducto = ({img, title, desc, price, id}) => { 
     const dispatch= useDispatch();
 
     const handleAddToCart= () => {

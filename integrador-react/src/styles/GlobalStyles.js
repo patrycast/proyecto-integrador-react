@@ -7,8 +7,7 @@ export const GlobalStyles = createGlobalStyle`
     --borgoña-claro: #5A0F1B;
     --magenta: #FF005C;
     --gray-bg: #2b2b2c;
-  /* --btn-gradient: linear-gradient(83deg, #ffa100, #fb103d); 
-  --btn-gradient-secondary: linear-gradient(140deg, #3B3022, #3B2329); */
+    --color-text-h2:#d6b7b7;
     --btn-gradient: linear-gradient(90deg,rgba(59, 48, 34, 1) 0%, rgba(209, 54, 54, 1) 57%, rgba(59, 35, 41, 1) 100%);
   }
 

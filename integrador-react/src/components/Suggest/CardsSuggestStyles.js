@@ -7,6 +7,13 @@ export const CardsSuggestContainer = styled.div`
     gap: 3rem;
     background: brown; padding: 1rem 4rem;
 
+     img {
+      width: 100%;            
+      height: 180px;          
+      object-fit: cover;    
+      border-radius: 8px; 
+    }
+
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -36,11 +43,8 @@ export const CardSuggestStyled= styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
 
   &:hover { 
-    min-width: 240px;
-    transform: scale(1.03);
-    transform-origin: center;
-// img { 
-//   max-width: 100%; 
-//   border-radius: 8px; 
-  }
+    transition: all 0.3s ease;
+    img { 
+      transform: scale(0.95);
+  }}
 `

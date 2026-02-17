@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const CategoriasContainer = styled.div`
-background: blue;
+background: #5b04043f;
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-padding: 0 4rem;
+padding: 0 4rem; 
 ;`
 
 
@@ -17,13 +17,22 @@ export const CardCategoria = styled.div`
   cursor: pointer;
   width: 140px;
   height: 140px;
-  border: 2px solid red;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  background-color: ${({picked}) => (picked ? "#FFD700" : "#746f6f")}; cursor: pointer;
-  transition: transform 0.3s ease;
-
+  
+  img {
+    margin-top: 30px;
+    width: 140px;
+    height:140px;
+    border-radius: 50%;
+    filter: sepia(0%);
+    transition: filter 0.3s ease;
+  }
+  
   &:active {
     transform: scale(0.95); 
+    filter: sepia(100%);
+
   }
 
   

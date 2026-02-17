@@ -7,13 +7,11 @@ export const Categoria = ({ category, img, title}) => {
 
   const {pickedCategory}= useSelector((state) => state.categories)
   
-  // const isPicked= category === pickedCategory
   
   const dispatch = useDispatch();
 
   return (
     <CardCategoria 
-      // picked={isPicked}
       picked={category === pickedCategory}
       onClick={() => dispatch(pickCategory(category))}
       >

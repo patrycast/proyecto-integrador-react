@@ -3,11 +3,11 @@ import { addItemToCart, toggleCart } from "../../redux/slices/cartSlice"
 import { CardSuggestStyled } from "./CardsSuggestStyles"
 import { toast } from "sonner"
 
-export const CardSuggest = ({title,  desc, price, id}) => {
+export const CardSuggest = ({title, img, desc, price, id}) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    dispatch(addItemToCart({id, title, desc, price}))
+    dispatch(addItemToCart({id, title, img, desc, price}))
     toast.success("Producto agregado al carrito")
     dispatch(toggleCart())
     
@@ -15,7 +15,7 @@ export const CardSuggest = ({title,  desc, price, id}) => {
   
   return (
     <CardSuggestStyled>
-        {/* <img src={img} alt={title} /> */}
+        <img src={img} alt={title} />
 
         <div>
             <h3>{title}</h3>

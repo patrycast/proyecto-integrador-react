@@ -9,13 +9,14 @@ const MAX_PRODUCTS= 8;
 export const CardsProductos = () => {
     const [maxProducts, setMaxProducts] = useState(MAX_PRODUCTS)
     
-    const products= useSelector(state => state.products.products)
+    const products= useSelector(state => state.products.products) 
 
     const {pickedCategory} = useSelector(state => state.categories)
    
     const filtereProducts= pickedCategory ? products.filter(
         product => product.category === pickedCategory
     ) : products
+   
 
 
     const renderedProducts= filtereProducts.slice(0, maxProducts)
@@ -46,15 +47,6 @@ export const CardsProductos = () => {
         </div>
         )} 
 
-
-{/* 
-{!pickedCategory && (
-  <div>
-    <button onClick={(e) => e.preventDefault()}>Ver Menos</button>
-
-    {maxProducts < filtereProducts.length ? ( <button onClick={() => setMaxProducts(prev => prev + MAX_PRODUCTS)}> Ver Más </button> ) : ( <span>No hay más productos</span> )}
-  </div>
-)}*/}
     </div>
   )
 } 

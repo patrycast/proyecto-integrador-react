@@ -12,6 +12,12 @@ export const HomeContainer = styled.div`
     min-height: 100vh; 
     
 `
+export const HomeTitle = styled.h2`
+  text-align: center;
+  margin-top: 5rem;
+  color: var(--color-text-h2);
+  font-weight: 800;
+`;
 
 export const SuggestContainer = styled.section`
     /* background: red; */

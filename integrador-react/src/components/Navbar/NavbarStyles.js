@@ -25,14 +25,36 @@ export const NavbarContainer= styled.nav`
     padding: 0;
     }
 
-    /* nav li {
-    cursor: pointer;
-    color: white;
-    } */
     nav li a {
     color: white;
     }
-    `
+
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem; 
+
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+
+  @media (max-width: 480px) {
+
+    width: 100%;  
+
+    nav ul {
+      gap: 5px;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }`;
 
 export const CartNavStyled= styled(Link)`
        cursor: pointer;
@@ -51,25 +73,5 @@ export const LogoStyled= styled.img`
 export const TitleStyled= styled.h1`
 `
 
-// __________________________________________
 
-// export const LinksContainerStyled = styled.div`
-//   color: white;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 40px;
 
-//   a {
-//     padding: 1rem 1.5rem;
-//   }
-
-//   a:first-child {
-//     background: var(--orange-bg);
-//     border-radius: 1rem;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     gap: 5px;
-//   }
-// `;

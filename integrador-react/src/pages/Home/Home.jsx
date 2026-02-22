@@ -16,19 +16,12 @@ export const Home = () => {
       )
   }
 
-//   const handleScrollToProducts = () => {
-//   productsRef.current?.scrollIntoView({
-//     behavior: "smooth",
-//     block: "start",
-//   });
-// };
-
 
   return (
     <HomeContainer>
       
         <section> 
-          <HomeTitle>hero seccion</HomeTitle>
+          {/* <HomeTitle>hero seccion</HomeTitle> */}
           <Hero scrollToProducts={handleScrollToProducts} />
         </section>
 
@@ -42,10 +35,12 @@ export const Home = () => {
             <Categorias/>
         </section>
 
-        <ProductsContainer ref={productsRef}>
+        <section>
+          <ProductsContainer ref={productsRef}>
           <HomeTitle>Productos</HomeTitle>
           <CardsProductos/>
         </ProductsContainer>
+        </section>
     </HomeContainer>
   )
 }

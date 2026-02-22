@@ -8,6 +8,8 @@ import { PageNotFound } from "../pages/PageNotFound/PageNotFound.jsx";
 import { Nosotros } from "../pages/Nosotros/Nosotros.jsx";
 import { OrderSummary } from "../pages/OrderSummary/OrderSummary.jsx";
 import { Contacto } from "../pages/Contacto/Contacto.jsx";
+import { ProtectedRoutes } from "./ProtectedRoutes.jsx";
+
 
 
 
@@ -21,9 +23,13 @@ export const Routes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />}/>
         <Route path="/contacto" element={<Contacto />}/>
-        <Route path="/OrderSummary" element={<OrderSummary />}/>
         <Route path="/MisPedidos" element={<MisPedidos />}/>
         <Route path="/felicitaciones" element={<Felicitaciones />}/>
+        <Route path="/OrderSummary" element={
+            <ProtectedRoutes redirectTo={"/login"}>
+                <OrderSummary />
+            </ProtectedRoutes>
+        }/>
 
         <Route path="*" element={<PageNotFound />}/>
     </ReactDomRoutes>

@@ -3,27 +3,50 @@ import { Field, Formik, Form } from "formik";
 import { initialValues } from "./formik/initial-values";
 import { validationSchema } from "./formik/validation-schema";
 import { toast } from "sonner";
+import { useOrders } from "../../../pages/OrderSummary/hook/useOrders";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../../../redux/slices/cartSlice";
+// import { useEffect } from "react";
 
 export const OrderSummaryForm = ({ cart, orderTotal, shipping }) => { 
-      
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const { createOrder } = useOrders();  
+
+    // useEffect(() => {
+    //     getOrders();
+
+    // }, [])
+
     return ( 
         <FormContainer> 
             <Title>Completá tus datos</Title> 
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
-                onSubmit={(values) => {
-                    const dataForOrderSummary = {
-                        name: values.name,
-                        phone: values.phone,
-                        address: values.address,
-                        location: values.location,
-                        cart: cart,
-                        orderTotal: orderTotal,
-                        shipping: shipping,
+                onSubmit={ async (values) => {
+                    const orderData = {
+                        items: cart,
+                        price: orderTotal,
+                        shippingCost: shipping,
+                        total: orderTotal + shipping,
+                        shippingDetails: {...values },
+                
                     };
-                    console.log("Pedido iniciado", dataForOrderSummary);
-                    toast.success("¡Tu pedido fue iniciado con éxito!");
+
+                    try {
+                        await createOrder(orderData)
+                        toast.success("¡Orden creada con éxito!");
+                        dispatch(clearCart())
+                        navigate("/Felicitaciones")   
+                    } catch (error) {
+                        console.log(error)
+                    }
+
+                    console.log("Pedido iniciado", orderData);
+                    // const response = await createOrder(orderData);
+                    // toast.success("¡Tu pedido fue iniciado con éxito!");
                 }
 
                 }
@@ -46,13 +69,13 @@ export const OrderSummaryForm = ({ cart, orderTotal, shipping }) => {
                         <div> 
                             <Input 
                                 type="tel"
-                                name="phone"
+                                name="cellphone"
                                 placeholder="Tu celular"
-                                value={values.phone}
+                                value={values.cellphone}
                                 onChange={handleChange}
-                                error={errors.phone && touched.phone}
+                                error={errors.cellphone && touched.cellphone}
                             />
-                            {errors.phone && touched.phone && <ErrorMessageStyled>{errors.phone}</ErrorMessageStyled>}
+                            {errors.cellphone && touched.cellphone && <ErrorMessageStyled>{errors.cellphone}</ErrorMessageStyled>}
                         </div> 
 
                         <div> 

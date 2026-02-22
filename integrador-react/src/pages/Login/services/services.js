@@ -13,6 +13,12 @@ export const login= async ( email, password) => {
 
     }
     catch (error) {
-        toast.error(error.response.data.msg)
+        console.log(error)
+        // toast.error(error.response.data.msg)
+        const msg = error.response?.data?.msg ||  
+        error.response?.data?.errors?.[0]?.msg ||  
+        "Error inesperado"; 
+        toast.error(msg); 
+        throw error; 
     }
 }

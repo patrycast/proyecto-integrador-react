@@ -3,6 +3,8 @@ import { useState } from "react";
 import { pickCategory } from "../../redux/slices/categoriesSlice";
 import { toast} from "sonner";
 import { FaSearch } from "react-icons/fa";
+import { HeroContainer, Search, DivWelcome, InfoWelcome, TitleHero, ParrafoHero } from "./HeroStyles";
+import { Button } from "../UI/Button/Button";
 
 export const Hero = ({scrollToProducts}) => {
 
@@ -30,29 +32,40 @@ export const Hero = ({scrollToProducts}) => {
     }
 
   return (
-    <section>
+    <HeroContainer>
         <form > 
-            <div> 
+            <Search> 
                  {/* <div> */}
-                    <FaSearch />
-                {/* </div> */}
             <input  
                 type="text" 
                 placeholder="Buscar por categoria"
                 onChange={(e) => setValueCategory(e.target.value)}
                 value={valueCategory} />
+                    <FaSearch style={{fontSize:"20px", marginTop:"5px"}} />
+                {/* </div> */}
                
 
-            <button   
+            <Button   
                 type="submit"
                 onClick={(e) => handleSubmit(e, valueCategory)}
                 disabled={!valueCategory} 
                 >Buscar
-            </button>    
+            </Button>    
 
-        </div>
+        </Search>
+
         </form>
-    </section>
+        <DivWelcome>
+           <InfoWelcome>
+             <TitleHero>Bienvenid@ a tu próximo brindis</TitleHero>
+            <ParrafoHero>Explorá vinos que transforman momentos simples en recuerdos inolvidables.</ParrafoHero>
+           </InfoWelcome>
+            <img  src="/assets/heroContainer.png" alt="" />
+
+
+
+        </DivWelcome>
+    </HeroContainer>
   )
 }
 

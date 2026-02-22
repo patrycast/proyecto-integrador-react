@@ -1,6 +1,6 @@
 export const initialValues = {
     name: "",
-    phone: "",
+    cellphone: "",
     address: "",
     location: "",
 }

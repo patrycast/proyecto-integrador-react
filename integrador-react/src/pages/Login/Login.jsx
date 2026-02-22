@@ -6,11 +6,16 @@ import { login } from "./services/services"
 import { toast } from "sonner"
 import { useDispatch } from "react-redux"
 import { setUser } from "../../redux/slices/userSlice"
+import { useRedirect } from "../../hooks/useRedirect"
+import { useLocation } from "react-router-dom"
 
 
 
 export const Login = () => {
   const dispatch = useDispatch();
+  const { state } = useLocation();
+  console.log(state)
+  useRedirect(state?.redirectedFromOrderSummary ? "/OrderSummary" : "/")
  
   return (
     <div>
@@ -31,7 +36,11 @@ export const Login = () => {
             }
 
           }catch(error){
-            toast.error(error.response.data.msg)
+            // toast.error(error.response.data.msg)
+            const msg = error.response?.data?.msg || 
+            error.response?.data?.errors?.[0]?.msg || 
+            error.message || "No se pudo iniciar sesión"; 
+            toast.error(msg);
 
           }
         }}

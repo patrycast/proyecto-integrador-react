@@ -1,22 +1,32 @@
 
-import { useState } from "react";
+// import { useState } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../../../redux/slices/userSlice";
+import { useEffect } from "react";
+import { Overlay, ModalContainerStyled, UsernameStyled, LinkStyled } from "./UserModalStyles";
 
 export const UserModal = () => {
-    const [hiddenUser, setHiddenUser] = useState(false);
+  const {hiddenMenu} = useSelector((state) => state.user)
+  const dispatch = useDispatch();
+    useEffect(() => {
+      dispatch(toggleMenu())
+    }, [dispatch])
 
     return (
     <>
-        <span onClick={() => setHiddenUser(false)} style={{ cursor: "pointer" }}>
+        {/* <span onClick={() => dispatch(toggleMenu())} style={{ cursor: "pointer" }}>
         Abrir menú
-      </span>
+      </span> */}
 
-      {!hiddenUser && (
-        <Overlay onClick={() => setHiddenUser(true)}>
-          <ModalContainerStyled onClick={(e) => e.stopPropagation()}>
+      {!hiddenMenu && (
+        <Overlay onClick={() => dispatch(toggleMenu())}>
+          <ModalContainerStyled isOpen={!hiddenMenu} onClick={(e) => e.stopPropagation()}>
+
             <UsernameStyled>Pepito</UsernameStyled>
-            <HrStyled />
             <LinkStyled to="/mis-ordenes">Mis Órdenes</LinkStyled>
-            <span onClick={() => setHiddenUser(true)} style={{ cursor: "pointer" }}>
+            <span onClick={() => dispatch(toggleMenu())} style={{ cursor: "pointer" }}>
+
               Cerrar Sesión
             </span>
           </ModalContainerStyled>

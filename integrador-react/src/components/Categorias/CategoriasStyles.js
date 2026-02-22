@@ -27,6 +27,11 @@ export const CardCategoria = styled.div`
     border-radius: 50%;
     filter: sepia(0%);
     transition: filter 0.3s ease;
+
+    &:hover{
+      filter: brightness(100%);
+      transition: filter 3s ease;
+    }
   }
   
   &:active {

@@ -1,7 +1,10 @@
-
+import { Section, Title } from "./PageNotFoundStyles";
 
 export const PageNotFound = () => {
   return (
-    <div>PageNotFound</div>
+    <Section>
+      <Title>Página no encontrada</Title>
+      <img src="/assets/pageNotFound.png" alt="pagina no encontrada" />
+    </Section>
   )
 }

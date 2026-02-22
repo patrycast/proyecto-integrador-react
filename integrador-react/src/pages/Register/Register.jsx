@@ -7,6 +7,7 @@ import { InputRegister } from "./RegisterStyled";
 import { createUser } from "./services/services";
 import { toast } from "sonner"
 
+
 export const Register = () => {
     const navigate = useNavigate();
   return (
@@ -25,7 +26,7 @@ export const Register = () => {
                     toast.success("Usuario registrado exitosamente")
                     toast.info("Ahora podes iniciar sesión")
                     setTimeout(() => {
-                        navigate("/login")   
+                        navigate("/login")
                     }, 2000)
                 } catch (error) {
                     toast.error(error.response.data.errors[0].msg);

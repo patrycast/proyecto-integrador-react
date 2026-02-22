@@ -23,6 +23,7 @@ export const CardsProductos = () => {
 
   return (
     <div>
+      
         <ProductsContainer>
             {renderedProducts.map((product) => (
                 <CardProducto key={product.id} {...product} />

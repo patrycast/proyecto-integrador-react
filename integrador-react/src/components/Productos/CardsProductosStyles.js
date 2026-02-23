@@ -6,14 +6,13 @@ export const ProductsContainer = styled.section`
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 400px);
     row-gap: 3.5rem;
-    /* width: 100%; */
     padding: 1rem 0; 
 `;
 
 export const ProductCard = styled.div`
     width: 300px;
     border-radius: 15px;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     border: 2px solid #d64141; 
     box-shadow: 0 4px 8px rgba(218, 166, 166, 0.48);
 
@@ -31,4 +30,11 @@ export const ProductCard = styled.div`
         color: #737171;
         font-size: 1.2rem;
     }
+`;
+
+
+export const Buttons= styled.div`
+    display: flex;
+    gap: 0.9rem;
+    margin-top: 1.5rem;
 `;

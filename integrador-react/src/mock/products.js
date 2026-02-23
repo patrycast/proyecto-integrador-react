@@ -44,7 +44,7 @@ export const products = [
   { id: 36, img:"/assets/Gran-Reserva-Blend.png" , title:"Gran Reserva Blend" ,category:"Premium" ,desc:"Mezcla de cepas, con gran complejidad.",price :6000 },
 
 
-  { id: 37, img: "/assets/Blend-joven-tinto", title: "Blend Joven", category: "Tintos", desc: "Ligero y frutal, ideal para comidas diarias.", price: 3100 },
+  { id: 37, img: "/assets/Blend-Joven-tinto.png", title: "Blend Joven", category: "Tintos", desc: "Ligero y frutal, ideal para comidas diarias.", price: 3100 },
   { id: 38, img: "/assets/Blend-Reserva-tinto.png", title: "Blend Reserva", category: "Tintos", desc: "Con cuerpo medio y notas especiadas.", price: 3800 },
   { id: 39, img: "/assets/Blend-Roble-tinto.png", title: "Blend Roble", category: "Tintos", desc: "Madurado en barrica, con aromas complejos.", price: 4200 },
   { id: 40, img: "/assets/Blend-Premium-tinto.png", title: "Blend Premium", category: "Tintos", desc: "Elegante y sofisticado, para paladares exigentes.", price: 4800 },

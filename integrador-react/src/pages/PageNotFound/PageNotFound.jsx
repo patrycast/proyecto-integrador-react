@@ -1,10 +1,17 @@
-import { Section, Title } from "./PageNotFoundStyles";
+import { Section, Title, ButtonContainer } from "./PageNotFoundStyles";
+import { Button} from "../../components/UI/Button/Button";
 
 export const PageNotFound = () => {
-  return (
+  return ( <>
     <Section>
       <Title>Página no encontrada</Title>
       <img src="/assets/pageNotFound.png" alt="pagina no encontrada" />
+
     </Section>
+    <ButtonContainer>
+      <Button>Volver</Button>
+
+    </ButtonContainer>
+    </>
   )
 }

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const HeroContainer = styled.section`
     height: auto;
-    /* border: 2px solid red; */
     padding: 2rem 0;
     display: flex;
     flex-direction: column;
@@ -12,10 +11,10 @@ export const HeroContainer = styled.section`
 
 
 export const Search= styled.div`
-    /* border: 2px solid blue; */
     display: flex;
-    gap: 0.3rem;
+    gap: 0.7rem;
     margin-bottom: 1.5rem;
+
     
     input{
         width: 14rem;
@@ -75,6 +74,11 @@ export const DivWelcome= styled.div`
         max-width: 450px;
         border-radius: 20px 10px 30px 10px;
         opacity: 0.8;
+        transition: opacity 0.3s ease-in-out;
+    }
+    img:hover{
+        opacity:1;
+        transition: opacity 0.3s ease-in-out;
     }
 
     @media (max-width: 768px) {
@@ -86,14 +90,31 @@ export const DivWelcome= styled.div`
 `;
 
 export const InfoWelcome= styled.div`
-    /* color: #e8cde1; */
-    /* border: 2px solid red; */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+  animation: fadeUp 0.8s ease;
+
 `;
+
 
 
 export const TitleHero = styled.h2`
     font-size: 2rem;
+  
 `;
+
+
 
 export const ParrafoHero = styled.p`
     font-size: 1.5rem;

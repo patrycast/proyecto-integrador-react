@@ -23,12 +23,24 @@ export const NosotrosWrapper= styled.div`
 export const ImgNosotros =styled.img`
     width: 40%;
     border-radius: 8px;
+    object-fit: cover;
+
+
+     @media (max-width: 768px) {
+    display: none;  
+  }
 `;
 
 export const ParrafoWrapper= styled.div`
     width: 60%;
     display: flex;
     flex-direction: column;
+    margin-right: 1rem;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        margin-right: 0;
+  }
 `;
 
 export const Parrafo = styled.p` 

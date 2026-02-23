@@ -40,7 +40,7 @@ export const CardSuggestStyled= styled.div`
   padding: 1rem; 
   border-radius: 8px; 
   text-align: center; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.44);  
 
   &:hover { 
     transition: all 0.3s ease;
@@ -48,3 +48,8 @@ export const CardSuggestStyled= styled.div`
       transform: scale(0.95);
   }}
 `
+
+export const SuggestInfo = styled.div`
+  margin-bottom: 15px;
+
+`;

@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux"
 import { addItemToCart, toggleCart } from "../../redux/slices/cartSlice"
 import { ProductCard } from "./CardsProductosStyles"
 import { toast } from "sonner"
+import { Button } from "../UI/Button/Button"
 
 export const CardProducto = ({img, title, desc, price, id}) => { 
     const dispatch= useDispatch();
@@ -21,7 +22,7 @@ export const CardProducto = ({img, title, desc, price, id}) => {
 
         <div>
             <p>{price}</p>
-            <button onClick={handleAddToCart}>Agregar</button>
+            <Button onClick={handleAddToCart}>Agregar</Button>
         </div>
     </ProductCard>
   )

@@ -14,8 +14,6 @@ export const useOrders = () => {
         setIsLoading(true);
         try {
             const orders= await getOrdersApi(user.token);
-            console.log("TOKEN:", user?.token)
-            console.log("orders ", orders)
             return orders;
         } catch (error) {
             console.log(error)
@@ -27,11 +25,11 @@ export const useOrders = () => {
 
 
     //crear ordenes
-    const createOrder= async (orderData) => {
+    const createOrder= async (orderData) => { 
         setIsLoading(true);
         try {
-            const response= await createOrderApi(orderData, user.token)
-            await getOrders();
+            const response= await createOrderApi(orderData, user?.token)
+            // await getOrders();
             console.log("Orden creada " ,response)
             return response;
             

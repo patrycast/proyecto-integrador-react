@@ -1,22 +1,24 @@
 import axios from "axios";
 
-// const URL_BASE= "https://nucbaz-api.vercel.app"
-const URL_BASE= "/api"
+// const URL_BASE= "https://nucbaz-api.vercel.app";
+// const URL_BASE= "/api"
+const URL_BASE = import.meta.env.VITE_API_URL;
+
 
 
 export const createOrderApi=  async (order, token) =>{
     try {
         const response = await axios.post(`${URL_BASE}/orders`, order, 
             {headers: {
-                "x-token": token,
+                'x-token': token,
             },
         }
         );
-        console.log("Respuesta de la API al crear orden: ", response.data);
-        return response.data;
+        console.log("Respuesta de la API al crear orden: ", response);
+        return response;
         
     } catch (error) {
-        console.log(error);
+        console.log("error al crear la orden", error);
         throw error;
         
     }

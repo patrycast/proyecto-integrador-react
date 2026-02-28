@@ -2,19 +2,20 @@ import {Formik, Form, Field, ErrorMessage } from "formik"
 import {  Link } from "react-router-dom"
 import { initialValues } from "./formik/initial-values"
 import { validationSchema } from "./formik/validation-schema"
-import { login } from "./services/services"
+// import { login } from "./services/services"
 import { toast } from "sonner"
 import { useDispatch } from "react-redux"
 import { setUser } from "../../redux/slices/userSlice"
 import { useRedirect } from "../../hooks/useRedirect"
 import { useLocation } from "react-router-dom"
+import { LoginUser } from "./services/services"
 
 
 
 export const Login = () => {
+
   const dispatch = useDispatch();
   const { state } = useLocation();
-  console.log(state)
   useRedirect(state?.redirectedFromOrderSummary ? "/OrderSummary" : "/")
  
   return (
@@ -25,8 +26,7 @@ export const Login = () => {
         validationSchema= {validationSchema} 
         onSubmit={async (values) => {
           try {
-            const user = await login(values.email, values.password);
-            console.log(user)
+            const user = await LoginUser(values.email, values.password);
             if(user){
               dispatch(setUser({
                 ...user.usuario,

@@ -32,19 +32,21 @@ export const OrderSummaryForm = ({ cart, orderTotal, shipping }) => {
                         shippingCost: shipping,
                         total: orderTotal + shipping,
                         shippingDetails: {...values },
-                
+                        
                     };
 
                     try {
                         await createOrder(orderData)
+                        console.log("Orden creada " ,orderData)
                         toast.success("¡Orden creada con éxito!");
                         dispatch(clearCart())
                         navigate("/Felicitaciones")   
                     } catch (error) {
                         console.log(error)
+                        throw error;
                     }
 
-                    console.log("Pedido iniciado", orderData);
+                    // console.log("Pedido iniciado", orderData);
                     // const response = await createOrder(orderData);
                     // toast.success("¡Tu pedido fue iniciado con éxito!");
                 }

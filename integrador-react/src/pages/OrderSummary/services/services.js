@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const URL_BASE= "https://nucbaz-api.vercel.app";
+// const URL_BASE= "https://nucbaz-api.vercel.app";
 // const URL_BASE= "/api"
-// const URL_BASE = import.meta.env.VITE_API_URL;
+const URL_BASE = import.meta.env.VITE_API_URL;
 
 
 

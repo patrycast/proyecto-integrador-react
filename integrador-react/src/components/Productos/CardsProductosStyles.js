@@ -37,4 +37,26 @@ export const Buttons= styled.div`
     display: flex;
     gap: 0.9rem;
     margin-top: 1.5rem;
+
 `;
+
+export const ButtonProduct = styled.button`
+        padding: 0.5rem 1rem;
+        background-color: var(--btn-products);
+        color: var(--color-text-p);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-weight: 500;
+
+        &:hover {
+            background-color: #b82e2e;
+        }
+
+        &:disabled {
+        background: #555;
+        cursor: not-allowed;
+        opacity: 0.6;
+  }
+    `;

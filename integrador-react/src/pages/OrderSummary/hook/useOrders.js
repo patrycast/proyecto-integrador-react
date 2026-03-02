@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { createOrderApi, getOrdersApi } from "../services/services";
-import { createOrderFail, getOrdersFail } from "../../../redux/slices/ordersSlice";
+import { createOrderFail, getOrdersFail, getOrderSuccess  } from "../../../redux/slices/ordersSlice";
 
 
 export const useOrders = () => {
@@ -14,10 +14,12 @@ export const useOrders = () => {
         setIsLoading(true);
         try {
             const orders= await getOrdersApi(user.token);
-            return orders;
+            console.log("las ordenes",orders)
+            dispatch(getOrderSuccess(orders));
+            // return orders;
         } catch (error) {
-            console.log(error)
-            dispatch(getOrdersFail("Error al obtener las ordenes: "))
+            // console.log(error)
+            dispatch(getOrdersFail("Error al obtener las ordenes: " + error.message))
         } finally {
             setIsLoading(false);
         }
@@ -25,17 +27,39 @@ export const useOrders = () => {
 
 
     //crear ordenes
+
+//     const createOrder= async (orderData) => { 
+//     setIsLoading(true);
+
+//     try {
+//         // Simulación 
+//         const fakeResponse = {
+//             _id: Date.now(),
+//             ...orderData,
+//             createdAt: new Date().toISOString()
+//         };
+
+//         dispatch(createOrderSuccess(fakeResponse));
+
+//         return fakeResponse;
+
+//     } catch (error) {
+//         dispatch(createOrderFail("Error al crear la orden"))
+//         throw error;
+//     } finally {
+//         setIsLoading(false);
+//     }
+// };
+
     const createOrder= async (orderData) => { 
         setIsLoading(true);
         try {
-            const response= await createOrderApi(orderData, user?.token)
-            // await getOrders();
-            console.log("Orden creada " ,response)
+            const response= await createOrderApi(orderData, user.token)
+            await getOrders();
             return response;
             
         } catch (error) {
-            console.log(error)
-            dispatch(createOrderFail("Error al crear la orden"))
+            dispatch(createOrderFail("Error al crear la orden", error))
         } finally {
             setIsLoading(false);
         }

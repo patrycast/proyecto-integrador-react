@@ -16,8 +16,7 @@ export const Overlay = styled.div`
     `; 
     
     export const ModalContainerStyled = styled.div` 
-    
-        background: blue; 
+        background: var(--gray-bg); 
         padding: 1rem; 
         border-radius: 8px; 
         width: 250px; 

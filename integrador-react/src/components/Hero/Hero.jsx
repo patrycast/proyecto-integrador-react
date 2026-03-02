@@ -3,7 +3,7 @@ import { useState } from "react";
 import { pickCategory } from "../../redux/slices/categoriesSlice";
 import { toast} from "sonner";
 import { FaSearch } from "react-icons/fa";
-import { HeroContainer, Search, DivWelcome, InfoWelcome, TitleHero, ParrafoHero } from "./HeroStyles";
+import { HeroContainer, Search, DivWelcome, InfoWelcome, TitleHero, ParrafoHero, IconSearch } from "./HeroStyles";
 import { Button } from "../UI/Button/Button";
 
 export const Hero = ({scrollToProducts}) => {
@@ -35,14 +35,13 @@ export const Hero = ({scrollToProducts}) => {
     <HeroContainer>
         <form > 
             <Search> 
-                 {/* <div> */}
+   
             <input  
                 type="text" 
                 placeholder="Buscar por categoria"
                 onChange={(e) => setValueCategory(e.target.value)}
                 value={valueCategory} />
-                    <FaSearch style={{fontSize:"20px", marginTop:"5px"}} />
-                {/* </div> */}
+                    <IconSearch style={{fontSize:"20px", marginTop:"5px"}} />
                
 
             <Button   

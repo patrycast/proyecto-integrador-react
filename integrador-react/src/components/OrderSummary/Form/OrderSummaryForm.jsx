@@ -12,7 +12,7 @@ import { clearCart } from "../../../redux/slices/cartSlice";
 export const OrderSummaryForm = ({ cart, orderTotal, shipping }) => { 
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { createOrder } = useOrders();  
+    const { createOrder, getOrders } = useOrders();  
 
     // useEffect(() => {
     //     getOrders();

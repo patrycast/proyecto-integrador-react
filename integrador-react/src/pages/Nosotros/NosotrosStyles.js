@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 
 export const NosotrosContainer = styled.section` 
-    padding: 2rem; 
+    padding: 0rem 2rem; 
     line-height: 1.8; 
     color: #c7c2c2; 
     font-family: 'Lora', serif; 

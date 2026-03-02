@@ -9,6 +9,7 @@ import { Nosotros } from "../pages/Nosotros/Nosotros.jsx";
 import { OrderSummary } from "../pages/OrderSummary/OrderSummary.jsx";
 import { Contacto } from "../pages/Contacto/Contacto.jsx";
 import { ProtectedRoutes } from "./ProtectedRoutes.jsx";
+import { CardsProductos } from "../components/Productos/CardsProductos.jsx";
 
 
 
@@ -18,8 +19,7 @@ export const Routes = () => {
     <ReactDomRoutes>
         <Route path="/" element={<Home />} />
         <Route path="/nosotros" element={<Nosotros />} />
-        {/* cambiar luego por productos */}
-        <Route path="/productos" element={<Home />} /> 
+        <Route path="/productos" element={<CardsProductos />} /> 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />}/>
         <Route path="/contacto" element={<Contacto />}/>

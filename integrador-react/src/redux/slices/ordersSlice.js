@@ -29,9 +29,17 @@ const ordersSlice = createSlice({
                 error: action.payload,
             }
         },
+
+        createOrderSuccess: (state, action) => {
+  return {
+    ...state,
+    error: null,
+    orders: [...state.orders, action.payload],
+  };
+},
     }
 
 })
 
-export const { createOrderFail, getOrderSuccess, getOrdersFail } = ordersSlice.actions;
+export const { createOrderFail, getOrderSuccess, getOrdersFail, createOrderSuccess } = ordersSlice.actions;
 export default ordersSlice.reducer;

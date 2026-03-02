@@ -5,6 +5,7 @@ import { FormContainer } from "./FormContactStyles"
 import { FormInput, ErrorText, SuccessMessage } from "./FormContactStyles"
 import { initialValues } from "./formik/initial-values";
 import { ValidationSchema } from "./formik/validation-schema";
+import { Button } from "../UI/Button/Button";
 
 
 export const FormContactFormik = () => {
@@ -41,7 +42,7 @@ export const FormContactFormik = () => {
                     </SuccessMessage>
                     )}
 
-                    <button type="submit">Enviar</button>
+                    <Button type="submit">Enviar</Button>
 
                      
                 

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavbarContainer= styled.nav`
+/* max-width: 1200px; */
+  width: 100%;
     height: 90px;
     background-color: rgb(26, 10, 10);
     display: flex;
@@ -13,7 +15,7 @@ export const NavbarContainer= styled.nav`
     top: 0; 
     padding: 0 2rem; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-    z-index: 1000;
+    z-index: 1000; 
 
     
 
@@ -23,6 +25,10 @@ export const NavbarContainer= styled.nav`
     gap: 20px;            
     margin: 0;
     padding: 0;
+
+     @media (max-width: 768px) {
+      margin: 1rem;
+     }
     }
 
     nav li a {
@@ -35,26 +41,40 @@ export const NavbarContainer= styled.nav`
     height: auto;
     padding: 1rem; 
 
+
     nav ul {
       flex-direction: column;
       gap: 10px;
+       display: ${({ open }) => (open ? "flex" : "none")};
     }
   }
 
 
   @media (max-width: 480px) {
 
-    width: 100%;  
+    /* width: 100%;  
 
     nav ul {
       gap: 5px;
-    }
+    } */
 
     h1 {
+      margin: 0;
       font-size: 1.2rem;
       text-align: center;
     }
   }`;
+
+export const MenuButton = styled.button`
+  display: none;
+  background: var(--borgoña-claro);
+  border: none;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;  
 
 export const CartNavStyled= styled(Link)`
        cursor: pointer;
@@ -68,6 +88,10 @@ export const CartNavStyled= styled(Link)`
 export const LogoStyled= styled.img`
         height: 85px;
         border-radius: 50%;
+
+  @media (max-width: 480px) {
+    height: 60px;
+  }
 `
 
 export const TitleStyled= styled.h1`

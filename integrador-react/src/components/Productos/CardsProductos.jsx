@@ -3,6 +3,7 @@ import { Buttons, ProductsContainer } from "./CardsProductosStyles"
 import { useSelector } from "react-redux"
 import { useState } from "react"
 import { Button } from "../UI/Button/Button"
+import { ButtonProduct } from "./CardsProductosStyles"
 
 const MAX_PRODUCTS= 9;
 
@@ -35,17 +36,17 @@ export const CardsProductos = () => {
         {!pickedCategory && (
 
         <Buttons>
-            <Button onClick={() => 
+            <ButtonProduct onClick={() => 
               setMaxProducts(prev => prev - MAX_PRODUCTS)}
               disabled= {maxProducts === MAX_PRODUCTS}>
                 Ver Menos
-            </Button>
+            </ButtonProduct>
 
-            <Button onClick={() => 
+            <ButtonProduct onClick={() => 
               setMaxProducts(prev => prev + MAX_PRODUCTS) } 
               disabled={maxProducts >= filtereProducts.length}>
                 Ver Más
-            </Button>
+            </ButtonProduct>
         </Buttons>
         )} 
 

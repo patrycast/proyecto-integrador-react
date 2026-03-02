@@ -3,27 +3,29 @@ import styled from "styled-components";
 export const CardsSuggestContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    padding: 1rem;
-    gap: 3rem;
-    background: brown; padding: 1rem 4rem;
-
-     img {
+    gap: 2rem;
+    background: #5817174f; 
+    padding: 2rem 4rem;
+    max-width: 1200px; 
+    margin: 0 auto;
+    
+    img {
       width: 100%;            
-      height: 180px;          
+      aspect-ratio: 4 / 3;
       object-fit: cover;    
       border-radius: 8px; 
     }
-
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
+    
+    
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 2rem;
+    
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;}
 `;
-
-
 
 
 export const CardSuggestTitle = styled.div`
@@ -47,6 +49,8 @@ export const CardSuggestStyled= styled.div`
     img { 
       transform: scale(0.95);
   }}
+
+
 `
 
 export const SuggestInfo = styled.div`

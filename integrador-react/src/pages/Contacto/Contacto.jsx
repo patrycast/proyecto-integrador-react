@@ -1,21 +1,19 @@
 
 import { FormContactFormik } from "../../components/FormContact/FormContactFormik"
-import { ImgForm, ContactImage } from "../../components/FormContact/FormContactStyles"
+import { ImgForm, ContactImage, SectionContact, TitleContact, DivContact } from "./ContactoStyles"
 
 
 export const Contacto = () => {
   return (
-    <section>
-      <h3>Escribinos tu consulta, te contestaremos a la brevedad</h3>
+    <SectionContact>
+      <TitleContact>Escribinos tu consulta, te contestaremos a la brevedad</TitleContact>
 
-      <div>
-        {/* <FormContactFormik /> */}
-        
+      <DivContact> 
         <FormContactFormik />
           <ImgForm>
             <ContactImage src="/src/assets/copa.jpg" width="150px"  alt="Copa" />
           </ImgForm> 
-      </div>
-    </section>
+      </DivContact>
+    </SectionContact>
   )
 }

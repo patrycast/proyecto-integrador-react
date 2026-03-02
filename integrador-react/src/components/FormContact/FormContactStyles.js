@@ -1,13 +1,11 @@
 import styled from "styled-components";
-// import { Formik } from "formik";
 import { Form } from "formik";
 
 
 
 export const FormContainer= styled(Form)`
-    max-width: 500px;         
+    max-width: 1200px;         
     width: 100%;                        
-    min-height: 100vh;   
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -15,29 +13,14 @@ export const FormContainer= styled(Form)`
     align-items: center;
     gap: 20px;
     padding-top: 40px ; 
+    padding-left: 20px;
     border-radius: 8px;
     position: relative;
       `;
 
-export const ImgForm = styled.div`
-    flex: 1;              
-    max-width: 100%;     
-    height: auto;         
-    object-fit: cover; 
-    position: absolute;
-    top: 90px;
-    right: 20px;     
-   
-`;   
-export const ContactImage = styled.img` 
-    width: 150px; 
-    height: auto; 
-    border-radius: 50%;
-    object-fit: cover; 
-`; 
     
 export const FormInput= styled.input`
-    width:90%;           
+    width:100%;           
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 7px;
@@ -51,6 +34,14 @@ export const FormInput= styled.input`
     color: #f8f3f3;    
     font-weight: 500;
     font-size: 18px;
+
+    
+    @media (max-width: 768px) {
+        width: 50%;
+    }
+    @media (max-width: 480px) {
+        width: 30%;
+    }
   }
  
 `;

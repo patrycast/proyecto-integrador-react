@@ -2,23 +2,26 @@
 import { Link } from "react-router-dom";
 import { IoPerson } from "react-icons/io5";
 import logo from "../../assets/logo.jpg";
-import {NavbarContainer, LogoStyled, CartNavStyled} from "./NavbarStyles";
+import {NavbarContainer, LogoStyled, CartNavStyled, MenuButton} from "./NavbarStyles";
 import { CartModal } from "./CartModal/CartModal";
 import { IconCart } from "./IconCart/IconCart";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toggleMenu } from "../../redux/slices/userSlice";
 import { UserModal } from "./UserModal/UserModal";
+import { useState } from "react";
+import { FaBars } from "react-icons/fa";
 
 
 
 export const Navbar = () => {
+    const [openMenu, setOpenMenu] = useState(false);
     const { user } = useSelector((state) => state.user)
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
   return (
-    <NavbarContainer>
+    <NavbarContainer  open={openMenu}>
         <CartModal />
         <UserModal/>
 
@@ -31,6 +34,10 @@ export const Navbar = () => {
         </div>
 
         <nav>
+            <MenuButton onClick={() => setOpenMenu(!openMenu)}>
+             <FaBars size={24} color={"white"} marginBottom={"20px"} />
+            </MenuButton>
+
             <ul>
                 
                 <CartNavStyled to="/nosotros">Nosotros</CartNavStyled>

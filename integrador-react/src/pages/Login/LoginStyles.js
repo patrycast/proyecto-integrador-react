@@ -1,35 +1,29 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
-export const RegisterContainer = styled.div`
+export const LoginContainer = styled.section`
     max-width: 1400px;
     height: 530px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 
-    @media (max-width: 768px) {
-        max-width: 90%;
+    @media (max-width: 480px) {
         height: auto;
         justify-content: flex-start;
     }
 `;
 
-export const FormRegister = styled.form`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-`;
-
-
-export const InputRegister = styled.input`
+export const inputLogin = styled.input`
     border: 2px solid ${({ isError }) => (isError ? "red" : "#ccc")};
     padding: 0.5rem;
     border-radius: 6px;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
 `;
 
-export const SpanRegister= styled.span`
+export const SpanLogin= styled.span`
     font-size: 18px;
     font-weight: 700;
     color: var(--btn-gradient);
@@ -43,3 +37,10 @@ export const SpanRegister= styled.span`
     padding: 0.3rem 0.6rem;
     border-radius: 5px;
 `;
+
+export const FormLogin = styled.form`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+`;
+

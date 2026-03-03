@@ -3,15 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { initialValues } from "./formik/initial-values";
 import { validationSchema } from "./formik/validation-schema";
 import { ErrorText } from "../../components/FormContact/FormContactStyles";
-import { InputRegister } from "./RegisterStyled";
+import { InputRegister, RegisterContainer, FormRegister, SpanRegister } from "./RegisterStyled";
 import { createUser } from "./services/services";
 import { toast } from "sonner"
+import { Button } from "../../components/UI/Button/Button";
 
 
 export const Register = () => {
     const navigate = useNavigate();
   return (
-    <div>
+    <RegisterContainer>
         <h1>Registrate</h1>
          <Formik
          initialValues={initialValues}
@@ -35,7 +36,8 @@ export const Register = () => {
         
          >
             {({ errors, touched }) => (
-            <Form>
+            // <FormRegister>
+                <Form>
                 < Field as={InputRegister} type="text" placeholder="Nombre" name="nombre" isError={errors.nombre && touched.nombre}/>
                 <ErrorMessage name="nombre" component={ErrorText}/>
 
@@ -45,13 +47,14 @@ export const Register = () => {
                 <Field as={InputRegister} type="password" placeholder="Contraseña" name="password" isError={errors.password && touched.password} />
                 <ErrorMessage name="password" component={ErrorText}/>
                 
-                <button type="submit">Registrate</button>
+                <Button type="submit">Registrate</Button>
                 <Link to="/login">
-                    <p>¿Si ya tenés una cuenta? Inicia Sesión</p>
+                    <p>¿Si ya tenés una cuenta? <SpanRegister>Inicia Sesión</SpanRegister></p>
                 </Link>
-            </Form>
+                </Form>
+            // </FormRegister>
             )}
         </Formik>
-    </div>
+    </RegisterContainer>
   )
 }

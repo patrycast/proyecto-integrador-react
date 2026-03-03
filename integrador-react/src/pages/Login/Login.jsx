@@ -9,6 +9,8 @@ import { setUser } from "../../redux/slices/userSlice"
 import { useRedirect } from "../../hooks/useRedirect"
 import { useLocation } from "react-router-dom"
 import { LoginUser } from "./services/services"
+import { LoginContainer, inputLogin, SpanLogin, FormLogin } from "./LoginStyles"
+import { Button } from "../../components/UI/Button/Button"
 
 
 
@@ -19,7 +21,7 @@ export const Login = () => {
   useRedirect(state?.redirectedFromOrderSummary ? "/OrderSummary" : "/")
  
   return (
-    <div>
+    <LoginContainer>
         <h1>Inicia Sesión</h1>
         <Formik
         initialValues= {initialValues}
@@ -45,16 +47,18 @@ export const Login = () => {
           }
         }}
         >
-            <Form>
-                <Field type="text" placeholder="Email" name="email"/>
+            {/* <FormLogin> */}
+              <Form>
+                <Field as={inputLogin} type="text" placeholder="Email" name="email" />
                 <ErrorMessage name="email" component="div"/>
-                <Field type="password" placeholder="Contraseña" name="password"/>
+                <Field as={inputLogin} type="password" placeholder="Contraseña" name="password"/>
                 <ErrorMessage name="password" component="div"/>
                 <Link to="/forgotPassword"></Link>
-                <Link to="/register"><p>No tenes una cuenta? Registrate</p></Link>
-                <button type="submit">Ingresar</button>
-            </Form>
+                <Link to="/register"><p>No tenes una cuenta? <SpanLogin>Registrate</SpanLogin></p></Link>
+                <Button type="submit">Ingresar</Button>
+                </Form>
+            {/* </FormLogin> */}
         </Formik>
-    </div>
+    </LoginContainer>
   )
 }

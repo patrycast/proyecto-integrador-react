@@ -24,12 +24,15 @@ export const Search= styled.div`
 
     
     input{
-        width: 14rem;
+        width: 24rem;
         background: #cc9797;
         color: #eeebeb;
         border: none;
         padding: 0.8rem;
         border-radius: 5px;
+        outline: none;
+        font-weight: 700;
+        font-size: 18px;
 
          &::placeholder {
         color: #393434;     

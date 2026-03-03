@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-text-h2:#d6b7b7;
     --color-text-p: #e8cde1;
     --btn-gradient: linear-gradient(90deg,rgba(59, 48, 34, 1) 0%, rgba(209, 54, 54, 1) 57%, rgba(59, 35, 41, 1) 100%);
-    --btn-products:#d64141;
+    --btn-products: #d64141;
   }
 
   html{

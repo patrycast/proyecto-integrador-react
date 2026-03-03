@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const ProductsContainerStyled = styled.div`
-  width: 400px; 
-  height: 100vh;
+  max-width: 400px; 
+  height: auto;
   padding: 20px;
   border: 2px solid  #ffffff2a;
   border-radius: 12px;
@@ -10,6 +10,10 @@ export const ProductsContainerStyled = styled.div`
   gap: 1.5rem;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 480px) {
+    max-width: 300px;
+  }
 `;
 
 export const ProductsTitleStyled = styled.h3`

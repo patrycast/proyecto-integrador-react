@@ -47,3 +47,17 @@ export const Parrafo = styled.p`
     margin-bottom: 1.2rem; 
     font-size: 1.1rem;
 `; 
+
+export const FooterColumn = styled.div`
+  flex: 1;
+`;
+export const FooterTitle = styled.h4`
+  margin-bottom: 20px;
+  font-size: 18px;
+`;
+
+export const FooterText = styled.p`
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ccc;
+`;

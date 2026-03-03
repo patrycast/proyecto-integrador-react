@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { ProductsOrderSummary } from "../../components/OrderSummary/Products/ProductsOrderSummary";
 import { OrderSummaryForm } from "../../components/OrderSummary/Form/OrderSummaryForm";
-import { ContainerStyled } from "./OrderSummaryStyles";
+import { ContainerStyled, OrderSummaryContainer } from "./OrderSummaryStyles";
 
 
 export const OrderSummary = () => {
@@ -9,13 +9,13 @@ export const OrderSummary = () => {
   const orderTotal= cart.reduce((acc, item) => (acc += item.price * item.qty), 0);
   
   return (
-    <div>
+    <OrderSummaryContainer>
         <h3>Inicia tu pedido</h3>
       <ContainerStyled>
          <OrderSummaryForm  cart={cart} orderTotal={orderTotal} shipping={shipping} />
         <ProductsOrderSummary cart={cart} shipping={shipping} orderTotal={orderTotal} />
        
       </ContainerStyled>
-    </div>
+    </OrderSummaryContainer>
   );
 };

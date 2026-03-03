@@ -1,7 +1,7 @@
 
 import styled from "styled-components";
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.section`
   width: 400px;
   padding: 20px;
   border-radius: 12px;
@@ -9,6 +9,10 @@ export const FormContainer = styled.div`
   gap: 1.2rem;
   border: 2px solid #ffffff2a;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  @media (max-width: 480px) {
+    max-width: 280px;
+  }
 `;
 
 export const Title = styled.h3`

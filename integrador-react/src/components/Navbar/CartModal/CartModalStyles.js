@@ -1,6 +1,7 @@
 import styled, { keyframes} from "styled-components"; 
 
 export const CartWrapper = styled.div` 
+
 /* max-width: 400px; 
 margin: 0 auto; 
 padding: 20px; 
@@ -23,7 +24,7 @@ export const Overlay = styled.div`
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    z-index: 1000; 
+    z-index: 1000;  
  
     `;
 
@@ -50,7 +51,8 @@ export const ModalContainer = styled.div`
     padding: 2rem;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     z-index: 2000;
-    animation: ${slideInRight} 0.5s ease forwards;   
+    animation: ${slideInRight} 0.5s ease forwards;
+    overflow-y: auto;    
     `;
 
 export const ModalCardContainer = styled.div`

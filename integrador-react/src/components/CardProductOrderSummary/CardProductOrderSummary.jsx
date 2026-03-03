@@ -26,7 +26,6 @@ export const CardProductOrderSummary = ({ id, title, desc, price, qty }) => {
 
       <ProductItem>
         <ProductName>{title}</ProductName>
-        <ProductDesc>{desc}</ProductDesc>
         <ProductPrice>${price}</ProductPrice>
       </ProductItem>
       <ButtonsCart>

@@ -7,17 +7,14 @@ import { useOrders } from "../../../pages/OrderSummary/hook/useOrders";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../../../redux/slices/cartSlice";
-// import { useEffect } from "react";
+
 
 export const OrderSummaryForm = ({ cart, orderTotal, shipping }) => { 
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { createOrder, getOrders } = useOrders();  
+    const { createOrder } = useOrders();  
 
-    // useEffect(() => {
-    //     getOrders();
 
-    // }, [])
 
     return ( 
         <FormContainer> 

@@ -20,4 +20,10 @@ export const ButtonStyled = styled.button`
         transition: 0.6s ease-in-out;
        
     } 
+
+    @media (max-width: 480px) {
+        width: 90%;
+        padding: 10px;
+        font-size: 14px;
+    }
 `;

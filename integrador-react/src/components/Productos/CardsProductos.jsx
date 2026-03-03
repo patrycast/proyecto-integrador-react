@@ -2,7 +2,6 @@ import { CardProducto } from "./CardProducto"
 import { Buttons, ProductsContainer } from "./CardsProductosStyles"
 import { useSelector } from "react-redux"
 import { useState } from "react"
-import { Button } from "../UI/Button/Button"
 import { ButtonProduct } from "./CardsProductosStyles"
 
 const MAX_PRODUCTS= 9;

@@ -12,6 +12,10 @@ export const ModalCardContainer = styled.div`
      margin-top: 1rem; 
      box-sizing: border-box;
      padding: 0 1rem; 
+
+    @media (max-width: 480px) {
+        padding: 0 0.4rem;
+    }
     
 
   & img {
@@ -28,12 +32,22 @@ export const ModalCardContainer = styled.div`
         align-items: center;
         margin: 0 auto;
         gap: 20px;
-        padding: 1rem;  
+        padding: 1rem; 
+        
+        
+        @media (max-width: 480px) {
+         gap: 10px; 
+         padding: 0.5rem; 
+        }
          
     `; 
     export const ProductName = styled.h3` 
         font-size: 18px; 
         margin: 0; 
+
+        @media (max-width: 480px) {
+            font-size: 16px;
+        }
     `; 
     export const ProductDesc = styled.p` 
         font-size: 12px; 
@@ -46,6 +60,7 @@ export const ModalCardContainer = styled.div`
         font-size: 15px; 
         font-weight: bold; 
         margin-top: 5px; 
+
     `; 
     export const QuantityControls = styled.div` 
         display: flex; 
@@ -69,12 +84,16 @@ export const ModalCardContainer = styled.div`
     export const ButtonsCart = styled.div`
             display: flex;
             width: 80%;
-            justify-content: space-around;
+            justify-content: space-around; 
+
+            @media (max-width: 480px) {
+                width: 100%;
+            }
             `;
 
 
     export const ButtonCart = styled.button`
-        text-align: center;
+            text-align: center;
             width:28px;
             height:28px;
             color: var(--borgoña-oscuro);
@@ -89,5 +108,11 @@ export const ModalCardContainer = styled.div`
             &:hover {
                 background: rgba(226, 74, 3, 0.86);
                 
+            }
+
+            @media (max-width: 480px) {
+                /* width: 24px; */
+                height: 24px;
+                padding-bottom: 5px;
             }
     `;

@@ -1,11 +1,15 @@
-import { NosotrosContainer, Titulo, Parrafo, ImgNosotros, NosotrosWrapper, ParrafoWrapper } from "./NosotrosStyles";
+import { NosotrosContainer, Titulo, Parrafo, ImgNosotros, NosotrosWrapper, ParrafoWrapper,
+    FooterColumn, FooterText, FooterTitle
+ } from "./NosotrosStyles";
 import nosotros from "../../assets/nosotros.jpg";
 
 
 export function Nosotros() { 
     return ( 
     <NosotrosContainer> 
-        <Titulo>Nosotros</Titulo> 
+        <header>
+            <Titulo>Nosotros</Titulo> 
+        </header>
             
         <NosotrosWrapper>
 
@@ -28,6 +32,15 @@ export function Nosotros() {
             </ParrafoWrapper>
             <ImgNosotros src={nosotros} alt="Imagen de Nosotros" />
         </NosotrosWrapper>
+        <footer>
+
+            <FooterColumn>
+          <FooterTitle>Querés comunicarte con nosotros?</FooterTitle>
+          <FooterText>Email: contacto@larutadelvino.com</FooterText>
+          <FooterText>Tel: +54 9 11 1234-5678</FooterText>
+          <FooterText>Buenos Aires, Argentina</FooterText>
+        </FooterColumn>
+        </footer>
     </NosotrosContainer> 
     ); 
 }

@@ -1,5 +1,6 @@
 import { FelicitacionesContainer } from "./FelicitacionesStyles"
 import { useNavigate } from "react-router-dom"
+import { Button} from "../../components/UI/Button/Button"
 
 export const Felicitaciones = () => {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export const Felicitaciones = () => {
       <p>Tu pedido ha sido procesado con éxito. Gracias por elegirnos.</p>
       <img src="/assets/felicitaciones.png" alt="felicitaciones" />
 
-      <button onClick={() => navigate("/")}>Volver al inicio</button>
+      <Button onClick={() => navigate("/")}>Volver al inicio</Button>
     </FelicitacionesContainer>
   )
 }

@@ -19,7 +19,7 @@ export const UserModal = () => {
         <Overlay onClick={() => dispatch(toggleMenu())}>
           <ModalContainerStyled isOpen={!hiddenMenu} onClick={(e) => e.stopPropagation()}>
 
-            <UsernameStyled>{user.nombre}</UsernameStyled>
+            <UsernameStyled>{user?.nombre}</UsernameStyled>
             <LinkStyled to="/mis-ordenes">Mis Órdenes</LinkStyled>
             <span onClick={() => dispatch(toggleMenu())} style={{ cursor: "pointer" }}>
 

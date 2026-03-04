@@ -23,7 +23,7 @@ export const Navbar = () => {
   return (
     <NavbarContainer  open={openMenu}>
         <CartModal />
-        <UserModal/>
+        {/* <UserModal/> */}
 
             <Link to="/">
                 <LogoStyled src={logo} alt="Logo"/>

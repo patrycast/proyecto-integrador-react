@@ -8,7 +8,7 @@ import { ValidationSchema } from "./formik/validation-schema";
 import { Button } from "../UI/Button/Button";
 import { toast } from "sonner";
 
-import { sendContactApi } from "./services/services";
+import { sendContactApi } from "./Services/Services";
 
 
 export const FormContactFormik = () => {

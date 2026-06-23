@@ -22,7 +22,7 @@ import {
 export const CartModal = () => {
   const navigate = useNavigate();
 
-  const { cart, shipping, hidden : cartHidden} = useSelector(state => state.cart);
+  const { cart=[], shipping=0, hidden : cartHidden} = useSelector(state => state.cart || {});
   const dispatch = useDispatch();
 
 

@@ -6,6 +6,9 @@ import { FormInput, ErrorText, SuccessMessage } from "./FormContactStyles"
 import { initialValues } from "./formik/initial-values";
 import { ValidationSchema } from "./formik/validation-schema";
 import { Button } from "../UI/Button/Button";
+import { toast } from "sonner";
+
+import { sendContactApi } from "./services/services";
 
 
 export const FormContactFormik = () => {
@@ -15,9 +18,19 @@ export const FormContactFormik = () => {
         <Formik
             initialValues={initialValues}
             validationSchema={ValidationSchema}
-            onSubmit={(values) => {
-                console.log("form", values)
-                setSuccessMessage("¡Tu mensaje fue enviado correctamente!");
+            onSubmit={async (values, { resetForm }) => {
+                try {
+                    await sendContactApi({
+                        name: values.name,
+                        lastName: values.lastName,
+                        email: values.email,
+                        message: values.message,
+                    });
+                    toast.success("¡Tu mensaje fue enviado correctamente!");
+                    resetForm();  
+                } catch (error) {
+                    toast.error("Error al enviar el mensaje. Intentá de nuevo.");
+                }
             }}
 
             >

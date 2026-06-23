@@ -28,7 +28,7 @@ export const Login = () => {
         validationSchema= {validationSchema} 
         onSubmit={async (values) => {
           try {
-            const user = await LoginUser(values.email, values.password);
+            const user = await LoginUser(values.email, values.password);   console.log("Respuesta del backend:", user);
             if(user){
               dispatch(setUser({
                 ...user.usuario,

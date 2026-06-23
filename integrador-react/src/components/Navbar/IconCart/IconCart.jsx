@@ -6,7 +6,9 @@ import { toggleCart } from "../../../redux/slices/cartSlice";
 
 
 export const IconCart = () => {
-  const totalCart= useSelector((state) => state.cart.cart).reduce(
+  const totalCart= useSelector((state) => state.cart.cart || []).reduce(
+  // const totalCart= useSelector((state) => state.cart.cartItems).reduce(
+
     (acc, item) => (acc + item.qty), 0)
     
   const dispatch = useDispatch();

@@ -1,9 +1,6 @@
 import axios from "axios";
 
-const URL_BASE= "https://nucbaz-api.vercel.app";
-// const URL_BASE= "/api"
-// const URL_BASE = import.meta.env.VITE_API_URL;
-
+const URL_BASE=import.meta.env.VITE_API_URL;
 
 
 
@@ -11,7 +8,7 @@ export const createOrderApi=  async (order, token) =>{
     try {
         const response = await axios.post(`${URL_BASE}/orders`, order, 
             {headers: {
-                "x-token": token,
+                Authorization: `Bearer ${token}`,
             },
         }
         );
@@ -27,13 +24,12 @@ export const getOrdersApi= async (token) => {
     try {
         const response = await axios.get(`${URL_BASE}/orders`,{
             headers: {
-                "x-token": token,
+                Authorization: `Bearer ${token}`,
             },
-        });
-            return response.data.data;
+        }); console.log("respuesta cruda del backend:", response.data);
+            return response.data.orders;
         } catch (error) {
             console.log("Error al obtener las órdenes", error);
-            // throw error;
             throw new Error("Error al obtener las órdenes");
         }
         }

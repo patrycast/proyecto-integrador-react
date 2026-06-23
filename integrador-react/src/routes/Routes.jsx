@@ -23,13 +23,19 @@ export const Routes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />}/>
         <Route path="/contacto" element={<Contacto />}/>
-        <Route path="/MisPedidos" element={<MisPedidos />}/>
+        {/* <Route path="/MisPedidos" element={<MisPedidos />}/> */}
         <Route path="/felicitaciones" element={<Felicitaciones />}/>
         <Route path="/OrderSummary" element={
             <ProtectedRoutes redirectTo={"/login"}>
                 <OrderSummary />
             </ProtectedRoutes>
         }/>
+
+        <Route path="/MisPedidos" element={
+            <ProtectedRoutes redirectTo={"/login"}>
+              <MisPedidos />
+            </ProtectedRoutes>
+}/>
 
         <Route path="*" element={<PageNotFound />}/>
     </ReactDomRoutes>

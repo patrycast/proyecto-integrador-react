@@ -18,21 +18,20 @@ export const Register = () => {
          initialValues={initialValues}
          validationSchema={validationSchema}
             onSubmit={async (values) => {
-                try {
-                    await createUser(
-                        values.nombre,
-                        values.email,
-                        values.password
-                    )
-                    toast.success("Usuario registrado exitosamente")
-                    toast.info("Ahora podes iniciar sesión")
-                    setTimeout(() => {
-                        navigate("/login")
-                    }, 2000)
-                } catch (error) {
-                    toast.error(error.response.data.errors[0].msg);
-                }
-            }}
+                const result = await createUser(
+                    values.nombre,
+                    values.email,
+                    values.password
+                )
+
+            if (result) {
+                toast.success("Usuario registrado exitosamente")
+                toast.info("Ahora podes iniciar sesión")
+                setTimeout(() => {
+                    navigate("/login")
+                }, 2000)
+            }
+    }}
         
          >
             {({ errors, touched }) => (

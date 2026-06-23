@@ -22,8 +22,15 @@ const userSlice= createSlice({
                 hiddenMenu: !state.hiddenMenu,
             }
         },
+        clearUser: (state) => {
+            return {
+                ...state,
+                user: null,
+                hiddenMenu: true,
+            }
+        }
     }
 })
 
-export const { setUser, toggleMenu} = userSlice.actions;
+export const { setUser, toggleMenu, clearUser} = userSlice.actions;
 export default userSlice.reducer;

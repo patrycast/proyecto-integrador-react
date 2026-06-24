@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const SectionContact = styled.section`
     margin: 0 auto;
     margin-top: 2rem; 
+
 `;
 
 export const TitleContact =styled.h2`
@@ -12,6 +13,10 @@ export const DivContact = styled.div`
 width: 100%;
 display: flex;
 gap: 2rem;
+
+  @media (max-width: 360px) {
+    padding: 1rem 1rem 1rem 0.25rem;
+  }
 
 `;
 

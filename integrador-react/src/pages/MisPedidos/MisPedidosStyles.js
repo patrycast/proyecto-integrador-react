@@ -6,6 +6,10 @@ export const Container = styled.div`
   padding: 2rem 1.5rem;
   max-width: 900px;
   margin: 0 auto;
+
+  @media (max-width: 360px) {
+    padding: 2rem 0.25rem;
+  }
 `;
 
 export const Title = styled.h1`
@@ -18,6 +22,11 @@ export const OrdersGrid = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 0 16px; */
 `;
 
 export const EmptyMessage = styled.p`
@@ -35,7 +44,12 @@ export const Card = styled.div`
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
+  /* align-items: center; */
   gap: 14px;
+
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
 `;
 
 export const OrderHeader = styled.div`

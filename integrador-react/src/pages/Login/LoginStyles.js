@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Form } from "formik";
 
 export const LoginContainer = styled.section`
     max-width: 1400px;
@@ -21,6 +22,13 @@ export const inputLogin = styled.input`
     border-radius: 6px;
     margin-right: 1rem;
     margin-bottom: 0.5rem;
+
+     @media (max-width: 395px) {
+    margin-right: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const SpanLogin= styled.span`
@@ -38,9 +46,10 @@ export const SpanLogin= styled.span`
     border-radius: 5px;
 `;
 
-export const FormLogin = styled.form`
+export const FormLogin = styled(Form)`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    border: 1px solid #ccc;
 `;
 

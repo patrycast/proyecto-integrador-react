@@ -27,12 +27,21 @@ export const InputRegister = styled.input`
     border: 2px solid ${({ isError }) => (isError ? "red" : "#ccc")};
     padding: 0.5rem;
     border-radius: 6px;
+    margin-right: 0.5rem;
+
+      @media (max-width: 395px) {
+    margin-right: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+  }
 `;
 
 export const SpanRegister= styled.span`
     font-size: 18px;
     font-weight: 700;
-    color: var(--btn-gradient);
+    color: var(--btn-gradient); background: red;
 
     background: var(--btn-gradient);
     -webkit-background-clip: text;

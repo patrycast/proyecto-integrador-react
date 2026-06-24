@@ -11,6 +11,7 @@ import { useLocation } from "react-router-dom"
 import { LoginUser } from "./services/services"
 import { LoginContainer, inputLogin, SpanLogin, FormLogin } from "./LoginStyles"
 import { Button } from "../../components/UI/Button/Button"
+import { ErrorText } from "../../components/FormContact/FormContactStyles";
 
 
 
@@ -48,12 +49,12 @@ export const Login = () => {
         }}
         >
             {/* <FormLogin> */}
-              <Form>
+              <Form as={FormLogin}>
                 <Field as={inputLogin} type="text" placeholder="Email" name="email" />
-                <ErrorMessage name="email" component="div"/>
+                <ErrorMessage name="email" component={ErrorText}/>
                 <Field as={inputLogin} type="password" placeholder="Contraseña" name="password"/>
-                <ErrorMessage name="password" component="div"/>
-                <Link to="/forgotPassword"></Link>
+                <ErrorMessage name="password" component={ErrorText}/>
+                {/* <Link to="/forgotPassword"></Link> */}
                 <Link to="/register"><p>No tenes una cuenta? <SpanLogin>Registrate</SpanLogin></p></Link>
                 <Button type="submit">Ingresar</Button>
                 </Form>

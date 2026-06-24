@@ -51,7 +51,7 @@ export const Register = () => {
                     <p>¿Si ya tenés una cuenta? <SpanRegister>Inicia Sesión</SpanRegister></p>
                 </Link>
                 </Form>
-            // </FormRegister>
+            //  </FormRegister>
             )}
         </Formik>
     </RegisterContainer>

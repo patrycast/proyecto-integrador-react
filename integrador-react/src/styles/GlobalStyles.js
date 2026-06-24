@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   *, *::before, *::after {
     box-sizing: border-box;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
     body {

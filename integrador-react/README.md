@@ -1,59 +1,44 @@
-# Proyecto Integrador | React JS
+# 🍷 E-Commerce de Vinos | Full Stack App
 
-## Temática
+Aplicación web de comercio electrónico para venta de vinos, desarrollada 
+con React en el frontend y Node.js + MongoDB en el backend.
 
-🔗 La temática es un **E-commerce**.  
-Página para una empresa que venda algún producto o grupo de productos y/o servicios.  
+🔗 [Ver demo en vivo](https://proyecto-integrador-react-zeta.vercel.app/)
+🔗 [Repositorio Backend](https://github.com/patrycast/proyecto-integrador-Backen)
 
----
+## 🚀 Funcionalidades
 
-## Indicaciones Generales
+- 🏠 Landing page con hero, productos destacados y navegación completa
+- 🛍️ Catálogo de productos
+- 🛒 Carrito con agregar, borrar, vaciar y confirmar compra
+- 👤 Sistema de autenticación: Register, Login y Logout
+- 📦 Historial de pedidos por usuario (Orders)
+- 📬 Formulario de contacto con validación via Formik
+- 📱 Diseño 100% responsive
 
-- Desarrollar su propia idea, su propio modelo de negocio.     
-- El proyecto debe ser **totalmente responsive** (condición necesaria para aprobar).  
+## 🛠️ Tecnologías utilizadas
 
----
+### Frontend
+- React
+- Redux Toolkit
+- React Router DOM
+- Styled Components
+- Formik + Yup
+- Axios
+- React Toastify
+- Vite
 
+### Backend
+- Node.js
+- Express
+- MongoDB
+- Mongoose
 
-## La APP deberá contar con:
+## 📌 Estado del proyecto
 
-### 👉 Landing Page
-- Header con su navbar funcional en responsive con API Context o Redux Toolkit.
-- Hero representativo de su página.
-- Apartado introductorio de *About*, que lleve a la página "Sobre Nosotros" (por ejemplo, un botón).
-- Sección de cards con productos destacados que lleve a la página de productos (por ejemplo, un botón).
-- Footer.
+✅ Completado y deployado en Vercel.
 
-### 👉 Página "Sobre Nosotros"
-- Con Header, Footer y la información que corresponda.
+## 👩‍💻 Autora
 
-### 👉 Página de "Productos"
-- Productos renderizados dinámicamente.
-- Lógica de filtros.
-- Agregado de productos al carrito.
-- Manejo de cantidades en carrito.
-- Posibilidad de vaciar el carrito.
-- Borrar individualmente cada producto.
-- Realizar compra.  
-  > Todas estas acciones deben tener un **modal de confirmación**.
-
-### 👉 Página de Contacto
-- Formulario con campos: **nombre, apellido, email, asunto**.
-- Validación con **Formik**.
-- No debe enviar nada, pero sí cumplir con la validación correcta.
-- Renderizar un mensaje de envío correcto si todos los campos pasan la validación.
-
-### 👉 Requisitos Técnicos
-- Todas las páginas vinculadas entre sí mediante **React Router**.
-- Diseño responsive en todas las páginas.
-- Deploy en **Vercel**.
-- Persistencia de productos en el carrito.
-- Entregar el repositorio de **GitHub** y el link de **Vercel**.
-
----
-
-## Opcionales (Desafíos Extra)
-- Sistema de login y registro.
-- Página de checkout al realizar la compra.
-- Página de producto individual.
-- Envío de mail desde el formulario de contacto usando APIs como **emailJS**.
+Patricia Castillo — [LinkedIn](https://linkedin.com/in/patricastillo) 
+| [GitHub](https://github.com/patrycast)git 

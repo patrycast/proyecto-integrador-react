@@ -41,4 +41,4 @@ con React en el frontend y Node.js + MongoDB en el backend.
 ## 👩‍💻 Autora
 
 Patricia Castillo — [LinkedIn](https://linkedin.com/in/patricastillo) 
-| [GitHub](https://github.com/patrycast)git 
+| [GitHub](https://github.com/patrycast)

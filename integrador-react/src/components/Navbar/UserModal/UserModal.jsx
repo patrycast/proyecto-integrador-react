@@ -1,46 +1,38 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { toggleMenu, clearUser } from "../../../redux/slices/userSlice";
-import { useEffect } from "react";
+import { clearUser } from "../../../redux/slices/userSlice";
 import { Overlay, ModalContainerStyled, UsernameStyled, LinkStyled } from "./UserModalStyles";
 import { useNavigate } from "react-router-dom";
 
-export const UserModal = () => {
+export const UserModal = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
-  const {hiddenMenu, user} = useSelector((state) => state.user)
+  const { user } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
-    useEffect(() => {
-      dispatch(toggleMenu())
-    }, [dispatch])
 
-
+  if (!isOpen || !user) return null;
 
   const handleLogout = () => {
       dispatch(clearUser());
-      dispatch(toggleMenu());
+      onClose();
       navigate("/login");
     }
-    
 
     return (
     <>
+      <Overlay onClick={onClose}>
+        <ModalContainerStyled onClick={(e) => e.stopPropagation()}>
 
-      {!hiddenMenu && (
-        <Overlay onClick={() => dispatch(toggleMenu())}>
-          <ModalContainerStyled isOpen={!hiddenMenu} onClick={(e) => e.stopPropagation()}>
+          <UsernameStyled>{user?.nombre}</UsernameStyled>
+          {/* <LinkStyled to="/mis-ordenes">Mis Órdenes</LinkStyled> */}
+          <LinkStyled to="/misPedidos" onClick={onClose}>Mis Órdenes</LinkStyled>
 
-            <UsernameStyled>{user?.nombre}</UsernameStyled>
-            {/* <LinkStyled to="/mis-ordenes">Mis Órdenes</LinkStyled> */}
-            <LinkStyled to="/MisPedidos">Mis Órdenes</LinkStyled>
+          <span onClick={handleLogout} style={{ cursor: "pointer" }}>
+            Cerrar Sesión
+          </span>
 
-            <span onClick={handleLogout} style={{ cursor: "pointer" }}>
-              Cerrar Sesión
-            </span>
-            
-          </ModalContainerStyled>
-        </Overlay>
-      )}
+        </ModalContainerStyled>
+      </Overlay>
     </>
   )
 }

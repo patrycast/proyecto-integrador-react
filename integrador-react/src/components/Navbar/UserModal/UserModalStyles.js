@@ -21,14 +21,12 @@ export const Overlay = styled.div`
         border-radius: 8px; 
         width: 250px; 
         box-shadow: 0 2px 10px rgba(0,0,0,0.2); 
-        transform: ${({ isOpen }) =>
-        isOpen ? "translateX(0)" : "translateX(100%)"};
+        animation: fadeIn 0.2s ease;
 
-        opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
-
-        transition: transform 2s ease, opacity 2s ease;
-
-        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(16px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
         `; 
         
     export const UsernameStyled = styled.h3` 

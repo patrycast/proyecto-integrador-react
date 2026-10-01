@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const INITIAL_STATE= {
     user: null,
-    hiddenMenu: true,
 }
 
 
@@ -16,21 +15,14 @@ const userSlice= createSlice({
                 user: action.payload,
             }
         },
-        toggleMenu: (state) => {
-            return {
-                ...state,
-                hiddenMenu: !state.hiddenMenu,
-            }
-        },
         clearUser: (state) => {
             return {
                 ...state,
                 user: null,
-                hiddenMenu: true,
             }
         }
     }
 })
 
-export const { setUser, toggleMenu, clearUser} = userSlice.actions;
+export const { setUser, clearUser} = userSlice.actions;
 export default userSlice.reducer;

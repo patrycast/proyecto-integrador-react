@@ -19,7 +19,14 @@ const reducers= combineReducers({
 const persistConfig={
     key: "root",
     storage,
-    whitelist: [ "cart", "user", "orders"], 
+    whitelist: [ "cart", "user", "orders"],
+    version: 2,
+    migrate: (persistedState) => {
+        if (persistedState?.user) {
+            delete persistedState.user.hiddenMenu
+        }
+        return persistedState
+    }
 } 
 
 const persistedReducer= persistReducer(persistConfig, reducers)

@@ -5,25 +5,28 @@ import logo from "../../assets/logo.jpg";
 import {NavbarContainer, LogoStyled, CartNavStyled, MenuButton} from "./NavbarStyles";
 import { CartModal } from "./CartModal/CartModal";
 import { IconCart } from "./IconCart/IconCart";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { toggleMenu } from "../../redux/slices/userSlice";
 import { UserModal } from "./UserModal/UserModal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 
 
 
 export const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false);
+    const [userMenuOpen, setUserMenuOpen] = useState(false);
     const { user } = useSelector((state) => state.user)
-    const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        setUserMenuOpen(false);
+    }, [user]);
 
   return (
     <NavbarContainer  open={openMenu}>
         <CartModal />
-        <UserModal/>
+        <UserModal isOpen={userMenuOpen} onClose={() => setUserMenuOpen(false)} />
 
             <Link to="/">
                 <LogoStyled src={logo} alt="Logo"/>
@@ -52,7 +55,7 @@ export const Navbar = () => {
 {/* ---------------------------------------------------ver------------------------------------------- */}
                 
                 <div>
-                    <div onClick={() => user ? (dispatch(toggleMenu())) : (navigate("/login"))}>
+                    <div onClick={() => user ? (setUserMenuOpen(true)) : (navigate("/login"))}>
                         <span>
                             {user ? `Hola ${user.nombre}` : <IoPerson size={24}/>}
                         </span>
@@ -62,12 +65,7 @@ export const Navbar = () => {
 
 
               
-                 {/* {user ? `Hola ${user.nombre}` : 
-                <div><IoPerson size={24}
-                 onClick={() => user ? (dispatch(toggleMenu())) : (navigate("/login"))}/>
-                </div>}   */}
-                {/* <CartNavStyled to="/login"><IoPerson size={24}/></CartNavStyled> */}
-                <CartNavStyled to="/contacto">Contacto</CartNavStyled>
+                 <CartNavStyled to="/contacto">Contacto</CartNavStyled>
 {/* ------------------------------------------------------------------------------------------------------------------ */}
             </ul>
         </nav>

@@ -43,7 +43,8 @@ export const ModalContainer = styled.div`
     position: fixed; 
     top:0; 
     right: 0px; 
-    width: 320px; 
+    width: min(320px, 100%); 
+    max-width: 100vw;
     height: 100vh;
     background: var(--borgoña-claro); 
     border: 1px solid #454444; 
@@ -53,6 +54,11 @@ export const ModalContainer = styled.div`
     z-index: 2000;
     animation: ${slideInRight} 0.5s ease forwards;
     overflow-y: auto;    
+
+    @media (max-width: 480px) {
+        padding: 1.25rem;
+        border-radius: 0;
+    }
     `;
 
 export const ModalCardContainer = styled.div`
@@ -71,6 +77,16 @@ export const ModalCardContainer = styled.div`
     height: 80px;
     border-radius: 16px;
     object-fit: cover;}
+
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+    gap: 10px;
+
+    & img {
+      width: 56px;
+      height: 56px;
+    }
+  }
 `;
 
 

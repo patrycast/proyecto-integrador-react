@@ -1,5 +1,6 @@
 
 import { FormContactFormik } from "../../components/FormContact/FormContactFormik"
+import copa from "../../assets/copa.jpg"
 import { ImgForm, ContactImage, SectionContact, TitleContact, DivContact } from "./ContactoStyles"
 
 
@@ -11,7 +12,7 @@ export const Contacto = () => {
       <DivContact> 
         <FormContactFormik />
           <ImgForm>
-            <ContactImage src="/src/assets/copa.jpg" width="150px"  alt="Copa" />
+            <ContactImage src={copa} width="150px"  alt="Copa" />
           </ImgForm> 
       </DivContact>
     </SectionContact>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ProductsContainerStyled = styled.div`
+  width: 100%;
   max-width: 400px; 
   height: auto;
   padding: 20px;
@@ -10,9 +11,11 @@ export const ProductsContainerStyled = styled.div`
   gap: 1.5rem;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 
   @media (max-width: 480px) {
-    max-width: 300px;
+    max-width: 100%;
+    padding: 14px;
   }
 `;
 
@@ -27,7 +30,8 @@ export const CardsWrapperStyled = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  height: 300px;
+  max-height: 300px;
+  overflow-y: auto;
 `;
 
 export const PriceContainerStyled = styled.div`
@@ -59,5 +63,5 @@ export const TotalStyled = styled.div`
 export const PriceTotalStyled = styled.span`
   font-size: 16px;
   font-weight: bold;
-  color: #000;
+  color: var(--color-text-p);
 `;

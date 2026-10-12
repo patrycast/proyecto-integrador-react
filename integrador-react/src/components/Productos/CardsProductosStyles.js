@@ -4,13 +4,23 @@ export const ProductsContainer = styled.section`
     display: grid;
     place-items: center;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, 400px);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     row-gap: 3.5rem;
-    padding: 1rem 0; 
+    column-gap: 1.5rem;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+
+    @media (max-width: 480px) {
+        row-gap: 2rem;
+        padding: 1rem;
+    }
 `;
 
 export const ProductCard = styled.div`
-    width: 300px;
+    width: 100%;
+    max-width: 320px;
     border-radius: 15px;
     padding: 1.5rem 1rem;
     border: 2px solid #d64141; 
@@ -30,11 +40,21 @@ export const ProductCard = styled.div`
         color: #737171;
         font-size: 1.2rem;
     }
+
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
 `;
 
 
 export const Buttons= styled.div`
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 0.9rem;
     margin-top: 1.5rem;
 

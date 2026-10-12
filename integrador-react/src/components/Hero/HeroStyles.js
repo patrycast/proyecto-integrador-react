@@ -132,9 +132,25 @@ export const InfoWelcome= styled.div`
 
 export const TitleHero = styled.h2`
     font-size: 2rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.4rem;
+    }
   
 `;
 
 export const ParrafoHero = styled.p`
     font-size: 1.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+    }
 `;

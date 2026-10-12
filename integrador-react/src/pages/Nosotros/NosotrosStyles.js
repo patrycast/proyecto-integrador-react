@@ -7,6 +7,10 @@ export const NosotrosContainer = styled.section`
     line-height: 1.8; 
     color: #c7c2c2; 
     font-family: 'Lora', serif; 
+
+    @media (max-width: 480px) {
+        padding: 0rem 1rem;
+    }
 `; 
 
 export const Titulo = styled.h1` 
@@ -14,6 +18,15 @@ export const Titulo = styled.h1`
     margin-bottom: 1.5rem; 
     color: #a0522d;
     text-align: center; 
+
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
 `;
 
 export const NosotrosWrapper= styled.div`

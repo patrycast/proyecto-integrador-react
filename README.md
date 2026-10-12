@@ -14,18 +14,18 @@ con React en el frontend y Node.js + MongoDB en el backend.
 - 👤 Sistema de autenticación: Register, Login y Logout
 - 📦 Historial de pedidos por usuario (Orders)
 - 📬 Formulario de contacto con validación via Formik
-- 📱 Diseño 100% responsive
+- 📱 Diseño responsive (mobile, tablet y desktop)
 
 ## 🛠️ Tecnologías utilizadas
 
 ### Frontend
-- React
-- Redux Toolkit
+- React 19
+- Redux Toolkit + Redux Persist
 - React Router DOM
 - Styled Components
 - Formik + Yup
 - Axios
-- React Toastify
+- Sonner (notificaciones)
 - Vite
 
 ### Backend

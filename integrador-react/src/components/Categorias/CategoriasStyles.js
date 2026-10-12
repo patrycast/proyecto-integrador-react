@@ -4,7 +4,9 @@ export const CategoriasContainer = styled.div`
 background: #5b04043f;
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-padding: 0 4rem; 
+justify-items: center;
+gap: 1rem;
+padding: 1rem clamp(1rem, 4vw, 4rem);
 ;`
 
 export const CardCategoria = styled.div`
@@ -14,14 +16,17 @@ export const CardCategoria = styled.div`
   align-items: center;
   gap: 1rem;
   cursor: pointer;
-  width: 140px;
+  width: 100%;
+  max-width: 140px;
   height: auto; 
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 
   img {
-    width: 140px;
-    height: 140px;
+    width: 100%;
+    max-width: 140px;
+    aspect-ratio: 1;
+    height: auto;
     border-radius: 50%;
     filter: sepia(0%);
     transition: filter 0.3s ease;
@@ -45,23 +50,11 @@ export const CardCategoria = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100px;
-    height: auto; 
-    margin: 10px;
-
-    img { 
-      margin-top: 0;
-    }
+    gap: 0.5rem;
 
     h3 {
       font-size: 0.9rem;
-      margin-top: 0.5rem;
-      text-align: center;
     }
-  }
-
-  @media (max-width: 428px) {
-    margin: 0 auto;     
   }
 `;
 

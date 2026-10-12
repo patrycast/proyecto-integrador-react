@@ -34,14 +34,6 @@ export const FormInput= styled.input`
     color: #f8f3f3;    
     font-weight: 500;
     font-size: 18px;
-
-    
-    @media (max-width: 768px) {
-        width: 50%;
-    }
-    @media (max-width: 480px) {
-        width: 30%;
-    }
   }
  
 `;

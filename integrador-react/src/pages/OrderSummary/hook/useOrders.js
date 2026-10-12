@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { createOrderApi, getOrdersApi } from "../services/services";
 import { createOrderFail, getOrdersFail, getOrderSuccess  } from "../../../redux/slices/ordersSlice";
@@ -10,11 +10,10 @@ export const useOrders = () => {
     const { user } = useSelector((state) => state.user);
 
 // obtener ordenes
-    const getOrders = async () => {
+    const getOrders = useCallback(async () => {
         setIsLoading(true);
         try {
             const orders= await getOrdersApi(user.token);
-            console.log("las ordenes",orders)
             dispatch(getOrderSuccess(orders));
             // return orders;
         } catch (error) {
@@ -23,7 +22,7 @@ export const useOrders = () => {
         } finally {
             setIsLoading(false);
         }
-    };
+    }, [dispatch, user.token]);
 
 
     //crear ordenes

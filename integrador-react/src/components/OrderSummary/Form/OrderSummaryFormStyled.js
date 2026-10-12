@@ -2,16 +2,18 @@
 import styled from "styled-components";
 
 export const FormContainer = styled.section`
-  width: 400px;
+  width: min(400px, 100%);
   padding: 20px;
   border-radius: 12px;
   color: #fff;
   gap: 1.2rem;
   border: 2px solid #ffffff2a;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
 
   @media (max-width: 480px) {
-    max-width: 280px;
+    max-width: 100%;
+    padding: 16px;
   }
 `;
 

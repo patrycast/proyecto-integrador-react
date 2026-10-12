@@ -19,16 +19,27 @@ export const Navbar = () => {
     const { user } = useSelector((state) => state.user)
     const navigate = useNavigate();
 
-    useEffect(() => {
+    const [prevUser, setPrevUser] = useState(user);
+    if (user !== prevUser) {
+        setPrevUser(user);
         setUserMenuOpen(false);
-    }, [user]);
+    }
+
+    const closeMenu = () => setOpenMenu(false);
+
+    useEffect(() => {
+        if (!openMenu) return;
+        const closeOnOutside = () => setOpenMenu(false);
+        document.addEventListener("click", closeOnOutside);
+        return () => document.removeEventListener("click", closeOnOutside);
+    }, [openMenu]);
 
   return (
     <NavbarContainer  open={openMenu}>
         <CartModal />
         <UserModal isOpen={userMenuOpen} onClose={() => setUserMenuOpen(false)} />
 
-            <Link to="/">
+            <Link to="/" onClick={closeMenu}>
                 <LogoStyled src={logo} alt="Logo"/>
             </Link>
 
@@ -37,17 +48,20 @@ export const Navbar = () => {
         </div>
 
         <nav>
-            <MenuButton onClick={() => setOpenMenu(!openMenu)}>
-             <FaBars size={24} color={"white"} marginBottom={"20px"} />
+            <MenuButton
+              aria-label="Abrir menú"
+              onClick={(e) => { e.stopPropagation(); setOpenMenu(!openMenu); }}
+            >
+             <FaBars size={24} color={"white"} />
             </MenuButton>
 
-            <ul>
+            <ul onClick={(e) => e.stopPropagation()}>
                 
-                <CartNavStyled to="/nosotros">Nosotros</CartNavStyled>
-                <CartNavStyled to="/productos">Productos</CartNavStyled>
+                <CartNavStyled to="/nosotros" onClick={closeMenu}>Nosotros</CartNavStyled>
+                <CartNavStyled to="/productos" onClick={closeMenu}>Productos</CartNavStyled>
 
 
-                <CartNavStyled> 
+                <CartNavStyled onClick={closeMenu}> 
                     <IconCart /> 
                 </CartNavStyled>
                 
@@ -55,7 +69,7 @@ export const Navbar = () => {
 {/* ---------------------------------------------------ver------------------------------------------- */}
                 
                 <div>
-                    <div onClick={() => user ? (setUserMenuOpen(true)) : (navigate("/login"))}>
+                    <div onClick={() => { user ? setUserMenuOpen(true) : navigate("/login"); closeMenu(); }}>
                         <span>
                             {user ? `Hola ${user.nombre}` : <IoPerson size={24}/>}
                         </span>
@@ -65,7 +79,7 @@ export const Navbar = () => {
 
 
               
-                 <CartNavStyled to="/contacto">Contacto</CartNavStyled>
+                 <CartNavStyled to="/contacto" onClick={closeMenu}>Contacto</CartNavStyled>
 {/* ------------------------------------------------------------------------------------------------------------------ */}
             </ul>
         </nav>

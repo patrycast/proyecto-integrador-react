@@ -2,6 +2,10 @@ import { styled } from "styled-components";
 
 export const OrderSummaryContainer= styled.section`
   margin: 0 2rem;
+
+  @media (max-width: 480px) {
+    margin: 0 1rem;
+  }
 `;
 
 export const ContainerStyled = styled.div`
@@ -17,6 +21,10 @@ export const ContainerStyled = styled.div`
    flex-direction: column;   
     align-items: center;      
     gap: 20px;        
+}    
+
+@media (max-width: 480px) {
+    margin: 0 8px;
 }    
 
 `;

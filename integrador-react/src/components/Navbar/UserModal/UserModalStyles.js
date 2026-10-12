@@ -19,7 +19,7 @@ export const Overlay = styled.div`
         background: var(--gray-bg); 
         padding: 1rem; 
         border-radius: 8px; 
-        width: 250px; 
+        width: min(250px, calc(100vw - 2rem)); 
         box-shadow: 0 2px 10px rgba(0,0,0,0.2); 
         animation: fadeIn 0.2s ease;
 

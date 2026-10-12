@@ -12,7 +12,7 @@ import { sendContactApi } from "./Services/Services";
 
 
 export const FormContactFormik = () => {
-    const [successMessage, setSuccessMessage] = useState("");
+    const [successMessage] = useState("");
 
   return ( 
         <Formik
@@ -28,7 +28,7 @@ export const FormContactFormik = () => {
                     });
                     toast.success("¡Tu mensaje fue enviado correctamente!");
                     resetForm();  
-                } catch (error) {
+                } catch {
                     toast.error("Error al enviar el mensaje. Intentá de nuevo.");
                 }
             }}

@@ -11,7 +11,7 @@ export const MisPedidos = () => {
 
   useEffect(() => {
     getOrders();
-  }, []);
+  }, [getOrders]);
 
   if (isLoading) return <p style={{ color: "white", textAlign: "center", marginTop: "100px" }}>Cargando pedidos...</p>;
 
